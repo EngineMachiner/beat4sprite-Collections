@@ -1,0 +1,1 @@
+return loadfile( BGA_G.BPath("5th075A") )( { Index = 2, X_coord = -1 } )
