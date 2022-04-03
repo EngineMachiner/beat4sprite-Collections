@@ -43,4 +43,10 @@ t[#t+1] = Def.Sprite{
 	end
 }
 
-return Def.ActorFrame{ t }
+return Def.ActorFrame{ 
+	OnCommand=function(self)
+		BGA_G.bitEyeFix(self, function(self) 
+			bitEye.AFT = true
+		end)
+	end,	t
+}

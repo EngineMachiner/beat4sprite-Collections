@@ -12,7 +12,7 @@ local params = BGA_G.Create( {
 
 	{
 		File = "1st/Sprites/C 5x1.png",
-		Frames = { 1, 5 }, Slices = 8,
+		Frames = { 1, 5 }, Slices = 10,
 		Commands = "FramePerSprite", Zoom = 0.25,
 		Skip = true,	Clockwise = true,
 		Script = "SpaceEffects/RoundTrace.lua",

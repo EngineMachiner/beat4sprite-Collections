@@ -27,12 +27,12 @@ local params = BGA_G.Create( {
 
 } )
 
-	t[#t+1] = Def.Quad{
-		OnCommand=function(self)
-			self:FullScreen()
-			self:diffuse(Color.Black)	
-		end
-	}
-	params:Load( t )
+t[#t+1] = Def.Quad{
+	OnCommand=function(self)
+		self:FullScreen()
+		self:diffuse(Color.Black)	
+	end
+}
+params:Load( t )
 
 return Def.ActorFrame{ t }
