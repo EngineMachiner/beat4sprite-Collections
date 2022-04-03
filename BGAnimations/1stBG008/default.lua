@@ -25,10 +25,11 @@ params:ParTweak( tweaks )
 
 t[#t+1] = Def.ActorFrameTexture{
 	OnCommand=function(self)
+		local p = self:GetParent()
 		self:setsize( SCREEN_WIDTH, SCREEN_BOTTOM )
 		self:EnableAlphaBuffer(true)
-		self:Create()
-		self:GetParent().Tex = self:GetTexture()
+		if not p.Tex then self:Create() end
+		p.Tex = self:GetTexture()
 	end,
 }
 params[1]:Load( t[#t] )
