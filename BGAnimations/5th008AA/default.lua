@@ -30,6 +30,4 @@ local params = BGA_G.Create( {
 
 params:ParTweak( sub )
 
-return Def.ActorFrame{ 
-	a, BGA_G.Load(params)
-}
+return Def.ActorFrame{ a, BGA_G.Load(params) }

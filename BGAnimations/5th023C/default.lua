@@ -23,7 +23,7 @@ local params_2 = BGA_G.Create( {
 	Script = "WallBumps.lua"
 } )
 
-	params_2:ParTweak( sub )
+params_2:ParTweak( sub )
 
 return Def.ActorFrame{
 	loadfile( BGA_G.BPath("5th001A") )( params ),

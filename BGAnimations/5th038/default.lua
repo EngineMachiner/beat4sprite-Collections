@@ -6,7 +6,7 @@ local params = BGA_G.Create( {
 	Y_num = { -2, 1 }
 } )
 
-return Def.ActorFrame{
+return BGA_G.Frame() .. {
 
 	OnCommand=function(af)
 		af:RunCommandsOnChildren(function(c)
@@ -14,13 +14,6 @@ return Def.ActorFrame{
 			c:effectclock('beat')
 		end)
 		af:queuecommand("Repeat")
-	end,
-	GainFocusCommand=function(self)
-		BGA_G.ObjFuncs(self)
-		self:ResumeOrStop()
-	end,
-	LoseFocusCommand=function(self)
-		self:ResumeOrStop("Stop")
 	end,
 
 	loadfile(BGA_G.BPath("5th037B"))(),

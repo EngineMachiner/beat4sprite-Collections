@@ -1,14 +1,4 @@
 
-local t = Def.ActorFrame{
-	GainFocusCommand=function(self)
-		BGA_G.ObjFuncs(self)
-		self:ResumeOrStop()
-	end,
-	LoseFocusCommand=function(self)
-		self:ResumeOrStop("Stop")
-	end
-}
-
 local params = BGA_G.Create( {
 	{
 		X_num = 2,
@@ -16,7 +6,7 @@ local params = BGA_G.Create( {
 	}	
 } )
 
-	t[#t+1] = loadfile( BGA_G.BPath("5th034A") )( params )
+local t = loadfile( BGA_G.BPath("5th034A") )( params )
 
 local params = BGA_G.Create( {
 	File = "5th/Sprites/DABCDE 4x3.png",
@@ -29,6 +19,6 @@ local params = BGA_G.Create( {
 	Commands = { "Move" }
 } )
 
-	t[#t+1] = params:Load()
-
-return Def.ActorFrame{ t }
+return Def.ActorFrame{
+	t,	params:Load()
+}

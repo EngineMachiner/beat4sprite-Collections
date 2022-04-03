@@ -26,10 +26,8 @@ local params_2 = BGA_G.Create( {
 	params_2:ParTweak(sub)
 
 local t = Def.ActorFrame{
-
 	loadfile( BGA_G.BPath("5th001A") )( params ),
-	loadfile( params_2.Script )( params_2 )
-
+	params_2:Load()
 }
 
 return Def.ActorFrame{ t }

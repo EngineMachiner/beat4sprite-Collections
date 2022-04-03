@@ -8,8 +8,6 @@ local params = BGA_G.Create( {
 local tweaks = { Index = 3, Remove = true }
 
 return Def.ActorFrame{
-
 	loadfile( BGA_G.BPath("5th042A") )( tweaks ),
 	params:Load()
-
 }

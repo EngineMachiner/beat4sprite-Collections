@@ -17,14 +17,11 @@ local params = BGA_G.Create( {
 
 local params_2 = BGA_G.Create( {
 	File = "5th/Sprites/DA 4x3.png",
-	Frame_i = 1,
-	Frame_l = 2,
-	Dir = "Up"
+	Frame_i = 1,	Frame_l = 2,	Dir = "Up",
+	Script = "Particles.lua"
 } )
 
 return Def.ActorFrame{
-
 	loadfile( BGA_G.BPath("5th001A") )( params ),
-	loadfile( BGA_G.SPath .. "Particles.lua" )( params_2 )
-
+	params_2:Load()
 }

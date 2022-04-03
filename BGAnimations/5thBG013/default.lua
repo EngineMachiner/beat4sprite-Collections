@@ -10,7 +10,7 @@ local params = BGA_G.Create( {
 	BGMirror = true
 } )
 
-	params:ParTweak( sub )
+params:ParTweak( sub )
 
 return Def.ActorFrame{
 	params:Load(),	t

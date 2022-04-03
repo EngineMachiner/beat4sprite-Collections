@@ -18,13 +18,10 @@ local params = BGA_G.Create( {
 	
 
 local params_2 = BGA_G.Create( {
-
-	
 	File = "5th/Sprites/A 4x3.png",
 	Frame_i = 1,	Frame_l = 2,
 	Shade = true,	Dir = "Down",
 	Script = "Particles.lua"
-
 } )
 
 return Def.ActorFrame{

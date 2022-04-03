@@ -14,16 +14,12 @@ local params = BGA_G.Create( {
 
 local params = BGA_G.Create( {
 	File = "5th/Sprites/DABCDE 4x3.png",
-	Frame_i = 1,
-	Frame_l = 12,
-	X_num = { -3, 4 },
-	Y_num = { -1, 2 },
-	X_coord = -1,
-	Y_coord = -1,
-	HurryTweenBy = 2,
-	Commands = { "Move" }
+	Frame_i = 1,	Frame_l = 12,
+	X_num = { -3, 4 },	Y_num = { -1, 2 },
+	X_coord = -1,	Y_coord = -1,
+	HurryTweenBy = 2,	Commands = { "Move" }
 } )
 
-	t[#t+1] = loadfile( BGA_G.SPath .. "TileTool.lua" )( params )
+	t[#t+1] = params:Load()
 
 return Def.ActorFrame{ t }

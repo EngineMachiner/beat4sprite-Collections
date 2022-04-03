@@ -22,6 +22,5 @@ params_2:ParTweak( sub )
 
 
 return Def.ActorFrame{
-	params:Load(),
-	params_2:Load()
+	params:Load(),	params_2:Load()
 }

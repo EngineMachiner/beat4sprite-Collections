@@ -1,6 +1,4 @@
 
-local t = Def.ActorFrame{}
-
 local tweaks = {
 
 	{
@@ -12,10 +10,8 @@ local tweaks = {
 		Cleanup = true
 	},
 
-	{ Remove = true }
+	{ Remove = true } 
 
 }
 
-	t[#t+1] = loadfile( BGA_G.BPath("5th001A") )( tweaks )
-
-return Def.ActorFrame{ t }
+return loadfile( BGA_G.BPath("5th001A") )( tweaks )

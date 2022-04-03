@@ -29,8 +29,6 @@ local params_2 = BGA_G.Create( {
 } )
 
 return Def.ActorFrame{
-
 	loadfile( BGA_G.BPath("5th001A") )( params ),
 	loadfile( BGA_G.BPath("5th001A") )( params_2 )
-
 }
