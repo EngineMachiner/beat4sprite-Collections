@@ -6,10 +6,10 @@ local t = Def.ActorFrame{}
 
 local aft = Def.ActorFrameTexture{
 	InitCommand=function(self)
+		local p = self:GetParent()
 		self:SetSize( SCREEN_WIDTH, SCREEN_HEIGHT )
 		self:EnableAlphaBuffer(true)
-		self:Create()
-		local p = self:GetParent()
+		if not p.Texture then self:Create() end
 		p.Texture = self:GetTexture()
 	end
 }
