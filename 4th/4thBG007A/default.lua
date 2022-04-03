@@ -39,27 +39,20 @@ local params = BGA_G.Create( {
 
 	aft[#aft+1] = BGA_G.IDest_Quad()
 
-return Def.ActorFrame{
-
-	GainFocusCommand=function(self)
-		BGA_G.ObjFuncs(self)
-		self:ResumeOrStop()
-	end,
-	LoseFocusCommand=function(self)
-		self:ResumeOrStop("Stop")
-	end,
+return BGA_G.Frame() .. {
 
 	params[1]:Load( t ),
-	Def.ActorFrame{ 
-		aft,
+	Def.ActorFrame{ aft,
 		Def.Sprite{
 			OnCommand=function(self)
 				local p = self:GetParent()
 				local tex = p.Texture
 				self:SetTexture(tex)
-				self:Center()
-				self:blend('add')
+				self:Center():blend('add')
 				self:diffusealpha(0.5)
+				BGA_G.bitEyeFix(self, function(self)
+					bitEye.AFT = true		self:xy(0,0)
+				end)
 			end
 		}
 	},

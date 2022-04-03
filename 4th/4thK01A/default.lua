@@ -21,15 +21,7 @@ local params = BGA_G.Create( {
 
 params:ParTweak( args )
 
-return Def.ActorFrame{
-
-	GainFocusCommand=function(self)
-		BGA_G.ObjFuncs(self)
-        self:ResumeOrStop()
-    end,
-    LoseFocusCommand=function(self)
-        self:ResumeOrStop("Stop")
-    end,
+return BGA_G.Frame() .. {
 
 	params[1]:Load(),
 	

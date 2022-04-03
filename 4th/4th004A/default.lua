@@ -41,4 +41,4 @@ for i=2,5 do
 end
 t[4].Spin = false
 
-return t:Load( f )
+return Def.ActorFrame{ t:Load() }
