@@ -6,7 +6,7 @@ local params = BGA_G.Create( {
 	}
 } )
 
-return Def.ActorFrame{
+return BGA_G.Frame() .. {
 	loadfile( BGA_G.BPath("5th034A") )( params ),
 	BGA_G.IDest_Quad()
 }

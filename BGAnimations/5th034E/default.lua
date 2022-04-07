@@ -12,7 +12,7 @@ local params = BGA_G.Create( {
 local tweaks = { X_num = 2,	X_coord = 0	}
 BGA_G.ParTweak( tweaks, sub )
 
-return Def.ActorFrame{ 
+return BGA_G.Frame() .. {
 	loadfile( BGA_G.BPath("5th034A") )( tweaks ),
 	BGA_G.IDest_Quad(),
 	params:Load()
