@@ -23,7 +23,7 @@ local params = BGA_G.Create( {
 			BGA_G.ObjFuncs(self)
 			self:FullScreen():diffuse(color("#505050"))
 			self:blend("BlendMode_Modulate"):rainbow()
-			self:effectperiod( 16 * self:GetDelay(2) )
+			self:effectperiod( 16 * self:GetDelay() )
 		end
 	}
 

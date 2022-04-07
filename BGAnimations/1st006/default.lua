@@ -21,7 +21,7 @@ local params = BGA_G.Create( {
 	params:Load( t )
 
 	t[2].On2Command = function(self)
-		local d = self:GetDelay(2) * 4
+		local d = self:GetDelay() * 4
 		self:diffusealpha(1):sleep(d)
 		self:diffusealpha(0):sleep(d):diffusealpha(1)
 		self:queuecommand("On2")
@@ -40,7 +40,7 @@ local params = BGA_G.Create( {
 			self:queuecommand("On2")
 		end,
 		On2Command=function(self)
-			local d = self:GetDelay(2)
+			local d = self:GetDelay()
 			self:diffusealpha(0)
 			self:sleep( 3 * d ):diffusealpha(1)
 			self:sleep(d):diffusealpha(0)

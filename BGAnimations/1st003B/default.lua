@@ -13,7 +13,7 @@ local params = BGA_G.Create( {
 	{
 		File = "1st/Sprites/H 5x4.png",
 		Frame_i = 16,	Dir = "Out",
-		Slices = 4,		StaticAngle = true,
+		Slices = 5,		StaticAngle = true,
 		Color = color("0,0,1,1"),
 		Script = "SpaceEffects/RoundTrace.lua",
 		Type = "Spiral"

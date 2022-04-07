@@ -21,14 +21,6 @@ local params = BGA_G.Create( {
 
 } )
 
-local bpm = GAMESTATE:GetSongBPS() * 60
-if bpm > 200 then
-	local d = params.FrmDelay
-	d = d * math.floor( bpm * 0.01 )
-	d = d * params.InternalDelay
-	params.FrmDelay = d
-end
-
 for i=1,2 do
 
 	t[#t+1] = Def.ActorFrame{}
@@ -80,7 +72,7 @@ for i=1,2 do
 
 			self.num = self.num + 2
 
-			self:sleep( ( params.FrmDelay - self.s ) )
+			self:sleep( ( params.FrmDelay - self.s ) * self:GetDelay() )
 			self.s = 0
 
 			self:queuecommand("Repeat")
