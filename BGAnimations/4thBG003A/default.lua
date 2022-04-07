@@ -47,7 +47,7 @@ local params = BGA_G.Create( {
 			self:queuecommand("Hide")
 		end,
 		HideCommand=function(self)
-			local d = self:GetDelay(2)
+			local d = self:GetDelay()
 			self:sleep(8*d):linear(4):diffusealpha(0)
 		end
 	}
@@ -69,7 +69,7 @@ local params = BGA_G.Create( {
 				self:queuecommand("Hide")
 			end,
 			HideCommand=function(self)
-				local d = self:GetDelay(2)
+				local d = self:GetDelay()
 				self:GetParent():sleep(4*d):diffusealpha(0)
 			end
 		}
@@ -84,7 +84,7 @@ local params = BGA_G.Create( {
 			self:queuecommand("Hide")
 		end,
 		HideCommand=function(self)
-			local d = self:GetDelay(2)
+			local d = self:GetDelay()
 			self:sleep(8*d):diffusealpha(0)
 		end
 	}
@@ -97,7 +97,7 @@ local params = BGA_G.Create( {
 			self:queuecommand("Hide")
 		end,
 		HideCommand=function(self)
-			local d = self:GetDelay(2)
+			local d = self:GetDelay()
 			self:sleep(8*d):diffusealpha(1)
 			self:sleep(4*d):diffusealpha(0)
 		end
@@ -111,7 +111,7 @@ local params = BGA_G.Create( {
 				self:queuecommand("Hide")
 			end,
 			HideCommand=function(self)
-				local d = self:GetDelay(2)
+				local d = self:GetDelay()
 				local p = self:GetParent()
 				p:diffusealpha(0)
 				p:sleep(12*d):diffusealpha(1)
@@ -154,7 +154,7 @@ local params = BGA_G.Create( {
 				self:queuecommand("Hide")
 			end,
 			HideCommand=function(self)
-				local d = self:GetDelay(2)
+				local d = self:GetDelay()
 				self:GetParent():sleep(16*d):diffusealpha(1)
 			end
 		}

@@ -11,7 +11,8 @@ local params = BGA_G.Create( {
 	{	
 		File = "4th/Sprites/AB 5x4.png",
 		Frames = { 2, 15 },	X_num = 5,
-		SkipFrame = 1,	Y_num = { -2, 1 },
+		SkipFrame = 3,
+		X_pos = 0.5,	Y_num = { -2, 1 },
 		Blend = "BlendMode_Add",
 		TCV = { -1, 0 },
 		Commands = "StairsStates"
