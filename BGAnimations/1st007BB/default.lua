@@ -1,28 +1,29 @@
 
-local params = BGA_G.Create( {
+local params = beat4sprite.create( {
 
 	{
 		File = "1st/Backgrounds/D2.png",
-		X_num = { 0, 1 },
-		Y_num = { -1, 0 },
-		X_pos = 0.75,
+		Columns = { 0, 1 },
+		Rows = { -1, 0 },
 		Zoom = 0.5,
-		HurryTweenBy = 4,
+		tweenRate = 4,
 		Commands = "Move",
-		X_coord = -1
+		scrollX = -1
 
 	},
 
 	{
 		File = "1st/Sprites/L 6x1.png",
 		Zoom = 0.25,
-		X_num = { -2, 3 },
-		Y_num = 1,
-		Frame_l = 6,
-		Commands = { "Blend", "FramePerSprite", "Zoomin" },
+		Columns = { -2, 3 },
+		Rows = 1,
+		lastState = 6,
+		Pulse = 3,
+		Commands = { "Blend", "StatePerSprite" },
+		AnimationTypes = "Static",
 		Blend = "BlendMode_Add",
 		Spacing = { 0.625, 1 },
-		State = -2
+		AnimationOffset = 4
 	}
 
 } )

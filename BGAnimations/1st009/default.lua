@@ -1,23 +1,21 @@
-return BGA_G.Load( {
+return beat4sprite.Load {
 
 	{
 		File = "1st/Sprites/E 4x1.png",
-		X_num = 1,
-		Frame_l = 4,
-		Delay = 0.25,
-		BGMirror = true,
-		Commands = { "Mirror" }
+		lastState = 4,
+		AnimationRate = 0.25,
+		Run = function(self) self:fadeleft(0.125):faderight(0.025) end
 	},
 
 	{
 		File = "1st/Sprites/D 4x2.png",
-		X_num = 2,
+		Columns = 2,	MirrorX = "Rows",
 		Zoom = 0.5,
-		Y_num = { -2, 1 },
-		Frame_l = 8,
-		Commands = { "Color", "MirrorYPerRow", "Blend" },
+		Rows = { -2, 1 },
+		lastState = 8,
+		Commands = { "Color", "Blend" },
 		Blend = "BlendMode_Add",
 		Color = color("#FF0000")
 	}
 
-} )
+}

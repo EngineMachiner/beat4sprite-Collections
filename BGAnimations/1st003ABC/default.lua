@@ -1,25 +1,22 @@
-
-local params = BGA_G.Create( {
+return beat4sprite.Load {
 
 	{
 		File = "1st/Sprites/A 1x8.png",
-		X_num = 1,
-		Y_num = { -4, 3 },
-		Frame_l = 8,
+		Columns = 1,
+		Rows = { -4, 3 },
+		lastState = 8,
 		Color = color("#00FFFF")
 	},
 
 	{
 		File = "1st/Sprites/Gradients/1stABC 5x6.png",
-		X_num = { -2, 1 },
-		Y_num = { -1, 0 },
-		Frame_l = 30,
+		Columns = { -2, 1 },
+		Rows = { -1, 0 },
+		lastState = 30,
 		Blend = 'add',
 		Zoom = 3,
-		Delay = 0.5,
+		AnimationRate = 0.5,
 		Commands = { "Mirror" }
 	},
 
-} )
-
-return params:Load()
+}

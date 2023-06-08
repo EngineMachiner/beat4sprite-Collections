@@ -1,38 +1,32 @@
 
-local params = BGA_G.Create( {
+local params = {
 
 	{
 		File = "/1st/Sprites/HSV/A 4x1.png",
-		X_num = 1,
-		Frame_i = 2,
-		BGMirror = true
+		Columns = 1,
+		firstState = 2,
+		MirrorX = true
 	},
 
 	{
 		File = "/1st/Backgrounds/B.png",
-		X_num = 1,
+		Columns = 1,
 		Commands = { "Color", "Mirror" },
-		BGMirror = true,
-		Color = color("0,0,0,1")
+		MirrorX = true,
+		Color = Color.Black
 	}
 
-} ) 
+}
 
-local p = {	Frame_i = 4 }
-p = BGA_G.Copy( params[1], p )
+local p = beat4sprite.copy( params[1], { firstState = 4 } )
 
-params[1].Actors = Def.ActorFrame{
-	OnCommand=function(self)
-		BGA_G.ObjFuncs(self)
-		self:queuecommand("Repeat")
-	end,
+params[1].Actors = beat4sprite.Load(p) .. {
+	OnCommand=function(self) self:queuecommand("Repeat") end,
 	RepeatCommand=function(self)
-		self:sleep(2):diffusealpha(0)
-		self:sleep(2):diffusealpha(1)
+		local t = self:getTweenRate( p:getInternals() ) * 2
+		self:sleep(t):diffusealpha(0):sleep(t):diffusealpha(1)
 		self:queuecommand("Repeat")
 	end
 }
-
-p:Load( params[1].Actors )
 	
-return params:Load()
+return beat4sprite.Load(params)

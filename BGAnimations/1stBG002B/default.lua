@@ -1,20 +1,14 @@
 
-local tweaks = {
+return loadfile( beat4sprite.Paths.getBGAFile("1stBG001") ) {
 
 	{ Commands = "Mirror" },
 
 	{
 		File = "1st/Sprites/G 4x4.png",
-		X_num = { -6, 5 },
-		Y_num = { -3, 2 },
-		Frame_i = 9,
-		ResetParams = true,
-		Blend = "BlendMode_Add",
-		Commands = { "SpinFrame", "Alpha", "Blend" },
-		Zoom = 0.93,
-		Script = "AFTSpin.lua"
+		Columns = { -6, 5 },	Rows = { -3, 2 },
+		firstState = 9,			Cleanup = true,				Blend = "BlendMode_Add",
+		Commands = "Alpha",		TextureZoom = 0.625,		Spin = true,			
+		Script = "Texture.lua"
 	}
 
 }
-
-return loadfile( BGA_G.BPath("1stBG001") )( tweaks )

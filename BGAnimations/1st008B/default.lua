@@ -1,15 +1,15 @@
 
-local params = BGA_G.Create( {
+local params = beat4sprite.create( {
 
 	{
 		File = "1st/Backgrounds/H.png",
-		X_num = 1,
+		Columns = 1,
 		Commands = "Mirror",
 	},
 
 	{
 		File = "1st/Sprites/M 5x4.png",
-		Frame_i = 7,
+		firstState = 7,
 		Default = 20,
 		Script = "SpiralStaticTrace.lua",
 	}

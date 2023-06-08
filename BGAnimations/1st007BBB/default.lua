@@ -1,25 +1,24 @@
 
-local params = BGA_G.Create( {
+local params = beat4sprite.create( {
 
 	{
 		File = "1st/Backgrounds/D2.png",
-		X_num = { 0, 1 },
-		Y_num = { -1, 0 },
-		X_pos = 0.75,
+		Columns = { 0, 1 },
+		Rows = { -1, 0 },
 		Zoom = 0.5,
-		HurryTweenBy = 4,
+		tweenRate = 4,
 		Commands = "Move",
-		X_coord = -1
+		scrollX = -1
 
 	},
 
 	{
 		File = "1st/Sprites/C 5x1.png",
-		Frames = { 1, 5 },
-		Commands = "FramePerSprite", Zoom = 0.25,
+		States = { 1, 5 },
+		Commands = "StatePerSprite", Zoom = 0.5,
 		Skip = true,	Clockwise = true,
 		Script = "SpaceEffects/RoundTrace.lua",
-		Type = "Spiral"
+		Type = "Spiral",	AnimationTypes = "Static"
 	}
 
 } )

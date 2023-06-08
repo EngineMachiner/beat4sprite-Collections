@@ -1,30 +1,27 @@
 
-local params = BGA_G.Create( {
+local params = beat4sprite.create {
 
 	{
-		File = BGA_G.SongBGPath(),
-		X_num = 1,	BGMirror = true,
-		Script = "Kaleidoscopes/Main.lua"
+		File = beat4sprite.GAMESTATE.getSongBG(),
+		Script = "Kaleidoscopes/Single.lua"
 	},
 
 	{
 		File = "/1st/Sprites/C 5x1.png",
-		Static = true,
-		Frames = { 1, 5 },
-		Zoom = 0.25,
-		Commands = { "RandomInitState" },
-		Script = BGA_G.SPath .. "SpaceEffects/Bounce.lua"
+		States = { 1, 5 },		Zoom = 0.25,
+		Script = "SpaceEffects/Bounce.lua",
+		AnimationTypes = "Static"
 	}
 
-} )
+}
 
-	params[1].Actors = Def.Quad{
-		OnCommand=function(self)
-			BGA_G.ObjFuncs(self)
-			self:FullScreen():diffuse(color("#505050"))
-			self:blend("BlendMode_Modulate"):rainbow()
-			self:effectperiod( 16 * self:GetDelay() )
-		end
-	}
+local p = params[1].Actors
+
+local quad = beat4sprite.Sprite.colorQuad( color("#505050") ) .. { OnCommand=function(self)
+		self:blend("BlendMode_Modulate"):rainbow()
+		self:effectperiod( 16 * self:getTweenRate(p) )
+end }
+
+p = quad
 
 return params:Load()

@@ -1,26 +1,27 @@
 
 local tweaks = ...
 
-local params = BGA_G.Create( {
+local params = beat4sprite.create( {
 
 	{
-		File = BGA_G.SongBGPath(),
+		File = beat4sprite.GAMESTATE.getSongBG(),
 		Commands = "Mirror",
-		BGMirror = true,
-		X_num = 1
+		MirrorX = true,
+		Columns = 1
 	},
 
 	{
 		File = "1st/Sprites/C 5x1.png",
-		Frames = { 1, 5 },
-		Commands = "FramePerSprite", Zoom = 0.25,
+		States = { 1, 5 },
+		Commands = "StatePerSprite", Zoom = 0.5,
 		Skip = true,	Clockwise = true,
 		Script = "SpaceEffects/RoundTrace.lua",
-		Type = "Spiral"
+		Type = "Spiral",
+		AnimationTypes = "Static"
 	}
 
 } )
 
-params:ParTweak( tweaks )
+params:tweak( tweaks )
 
 return params:Load()

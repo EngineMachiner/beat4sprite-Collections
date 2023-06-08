@@ -1,14 +1,14 @@
 
 local tweaks = ...
 
-local params = BGA_G.Create( {
+local params = beat4sprite.create( {
 
 	{
-		File = BGA_G.SongBGPath(),
+		File = beat4sprite.GAMESTATE.getSongBG(),
 		Commands = { "Color", "Mirror" },
 		Color = color("#808080"),
-		BGMirror = true,
-		X_num = 1
+		MirrorX = true,
+		Columns = 1
 	},
 
 	{
@@ -16,11 +16,11 @@ local params = BGA_G.Create( {
 		Zoom = 1/3,
 		Commands = { "Rainbow", "Blend" },
 		Blend = "BlendMode_Add",
-		X_num = 2,	Y_num = 1
+		Columns = 2,	Rows = 1
 	}
 
 } )
 
-params:ParTweak( tweaks )
+params:tweak( tweaks )
 
 return params:Load()

@@ -11,9 +11,9 @@ return beat4sprite.Load {
 	{
 		File = "1st/Sprites/H 5x4.png",
 		Script = "SpaceEffects/Line.lua",
-		Flat = true, 		Move = "Out",
-		Blend = 'add',		numberOf = 1,
-		tweenRate =	0.25,	States = 2
+		Flat = true,	numberOf = 1,
+		Blend = 'add',	tweenRate =	0.25,
+		States = 2
 	}
 
 }

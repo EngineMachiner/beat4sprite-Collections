@@ -1,18 +1,17 @@
 
-local params = BGA_G.Create( {
+local paramTwo = {
+	File = "1st/Sprites/D 4x2.png",		lastState = 8,
+	Script = "SpaceEffects/RoundTrace.lua",
+	Type = "Spiral",		Slices = 1,		Rotation = { 0, 0, -45 }
+}
 
-	{
-		File = "1st/Backgrounds/H.png",
-		Script = "Kaleidoscopes/Main.lua"
-	},
+local paramThree = {}		DeepCopy( paramTwo, paramThree )
+paramThree.mainRotation = 180
 
-	{
-		File = "1st/Sprites/D 4x2.png",
-		Frame_l = 8,	InitRot = { 0, 0, 90 },
-		Script = "SpaceEffects/RoundTrace.lua",
-		Type = "Spiral",	Slices = 2
-	}
+return beat4sprite.Load {
 
-} )
+	{	File = "1st/Backgrounds/H.png",		Script = "Kaleidoscopes/Single.lua"	},
 
-return params:Load()
+	paramTwo,		paramThree
+
+}

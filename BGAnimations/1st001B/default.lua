@@ -1,79 +1,50 @@
 
 local t = Def.ActorFrame{}
 
-local params = BGA_G.Create( {
+local params = beat4sprite.create {
 
 	{
 		File = "1st/Backgrounds/A.png",
-		X_num = 1,
-		Delay = 4,
+		Columns = 1
 	},
 
 	{
 		File = "1st/Sprites/J 3x5.png",
-		X_num = 1,
-		Spacing = { 1, 0.65 },
-		Y_num = 1,
-		Zoom = 2.5,
-		Frame_l = 15,
-		Color = Color.Orange,
+		Columns = 1,		Spacing = { 1, 0.65 },
+		Rows = 1,			Zoom = 2.5,
+		lastState = 15,		Color = Color.Orange,
 		Blend = 'add'
 	}
 
-} )
-
-	t[#t+1] = Def.Quad{
-		OnCommand=function(self)
-			self:FullScreen()
-			self:diffuse(Color.Black)
-		end
-	}
-
-	params[1]:Load( t )
-	
-	t[2].OnCommand = function(self)
-		self:zoomx( 0.5 )
-		self:x(25)
-	end
-
-	t[#t+1] = Def.Quad{
-		OnCommand=function(self)
-			self:FullScreen()
-			self:blend("BlendMode_InvertDest")
-		end
-	}
-
-local matrix = {
-	{ 0, 0.625 },
-	{ 0.5, 0 }
 }
 
-for i=-1,1 do
-	for k=1,2 do
-		t[#t+1] = Def.Sprite{
-			Texture=BGA_G.GPath .. "1st/Backgrounds/G.png",
-			OnCommand=function(self)
+t[#t+1] = beat4sprite.Sprite.colorQuad( Color.Black )			params[1]:Load(t)
+	
+t[2].OnCommand=function(self) self:x(25):zoomx(0.5) end
 
-				BGA_G.ObjFuncs(self)
-				self:Center()
+t[#t+1] = beat4sprite.Sprite.blendQuad( "BlendMode_InvertDest" )
 
-				local p = BGA_G.Create( {} )
+local crop = { { 0, 0.5 }, { 0.625, 0 } }
+local p = beat4sprite.createInternals { File = "1st/Backgrounds/G.png" }
 
-				self:SetStates(p)
+for i=-1,1 do		for k=1,2 do
+	
+	t[#t+1] = beat4sprite.Actor(p) .. {
+		OnCommand=function(self)
 
-				self:x( self:GetX() + self:GetZoomedWidth() * i )
-				self:cropleft(matrix[1][k])
-				self:cropright(matrix[2][k])
+			local crop = crop[k]
 
-				if math.abs(i) == 1 then 
-					self:zoomx( - self:GetZoomX() )
-				end
+			self:init(p):Center()
+			self:x( self:GetX() + self:GetZoomedWidth() * i )
+			self:cropleft( crop[1] ):cropright( crop[2] )
 
-			end
-		}
-	end
-end
+			if math.abs(i) == 1 then self:zoomx( - self:GetZoomX() ) end
 
-params[2]:Load( t )
+		end
+	}
+
+end			end
+
+params[2]:Load(t)
 
 return Def.ActorFrame{ t }

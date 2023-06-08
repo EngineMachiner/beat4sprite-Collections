@@ -1,26 +1,23 @@
 
-local params = BGA_G.Create( {
+local params = beat4sprite.create {
 
 	{
 		File = "1st/Sprites/HSV/A 4x1.png",
-		X_num = 1,	Frame_i = 4,
-		Frame_l = 1,	Delay = 8
+		Columns = 1,	firstState = 4,
+		lastState = 1,	AnimationRate = 8
 	},
 
 	{
 		File = "1st/Sprites/Clock 6x5.png",
-		X_num = 1,	Commands = "ZWrite",
-		Frame_i = 1,	Frame_l = 30,
-		Zoom = 5,	Delay = 2
-	}, 		
+		Commands = "MaskSource",
+		firstState = 1,	lastState = 30,
+		Zoom = 5,	AnimationRate = 2
+	},
 	
-	{ 
-		Animate = true,		State = 1,
-		Commands = { "FramePerSprite", "ZTest" }
-	}
+	{ AnimationOffset = 1, Commands = "MaskDestination" }
 
-} )
+}
 
-params[3] = params[1]:Copy( params[3] )
+params[3] = params[1]:copy( params[3] )
 
 return params:Load()

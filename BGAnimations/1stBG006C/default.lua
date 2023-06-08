@@ -1,21 +1,21 @@
 
-local params = BGA_G.Create( {
+local params = beat4sprite.create( {
 
 	{
-		File = BGA_G.SongBGPath(),
-		X_num = 1,
-		BGMirror = true,
-		Script = "Kaleidoscopes/Main.lua"
+		File = beat4sprite.GAMESTATE.getSongBG(),
+		Columns = 1,
+		MirrorX = true,
+		Script = "Kaleidoscopes/Single.lua"
 	},
 
 	{
 		File = "1st/Sprites/Gradients/1stAfro 3x5.png",
-		X_num = 1,
-		Y_num = { -2, 0 },
-		Frame_l = 15,
+		Columns = 1,
+		Rows = { -2, 0 },
+		lastState = 15,
 		Commands = "Mirror",
 		Zoom = 2.5,
-		BGMirror = true,
+		MirrorX = true,
 		Blend = 'add',
 		Alpha = 0.5
 	},

@@ -1,17 +1,14 @@
-
-local params = BGA_G.Create( {
+return beat4sprite.Load {
 
 	{
-		File = "/1st/Sprites/Gradients/1stBall 3x5.png",
-		X_num = 1, Frames = { 1, 15 }, Zoom = 5, BGMirror = true
+		File = "1st/Sprites/Gradients/1stBall 3x5.png",
+		Columns = 1, States = { 1, 15 }, Zoom = 5, MirrorX = true
 	},
 
 	{
-		File = "/1st/Sprites/H 5x4.png",
-		Frame_i = 17, Script = "SpaceEffects/Line.lua",
-		Num = 4, Type = "Line"
+		File = "1st/Sprites/H 5x4.png",
+		firstState = 17, Script = "SpaceEffects/Line.lua",
+		numberOf = 4, Type = "Line"
 	}
 
-} ) 
-
-return params:Load()
+}

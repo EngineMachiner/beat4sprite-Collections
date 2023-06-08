@@ -1,19 +1,16 @@
-
-local params = BGA_G.Create( {
+return beat4sprite.Load {
 
 	{
 		File = "/1st/Sprites/Gradients/1stBall 3x5.png",
-		X_num = 1, Frames = { 1, 15 }, Zoom = 5, BGMirror = true
+		Columns = 1, States = { 1, 15 }, Zoom = 5, MirrorX = true
 	},
 
 	{
 		File = "1st/Sprites/D 4x2.png",
-		X_num = 2, Zoom = 0.5, Y_num = { -2, 1 },
-		Frame_l = 8,
-		Commands = { "Color", "MirrorYPerRow", "Blend" },
+		Columns = 2, Zoom = 0.5, Rows = { -2, 1 },
+		lastState = 8,		MirrorX = "Rows",
+		Commands = { "Color", "Blend" },
 		Blend = "BlendMode_Add", Color = color("#00FF00")
 	}
 
-} )
-
-return params:Load()
+}
