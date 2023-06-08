@@ -1,4 +1,3 @@
-return BGA_G.Load( {
-	File = BGA_G.SongBGPath(),
-	Script = "WarpingEffects/IllusionX.lua"
-} )
+return beat4sprite.Load {
+	File = beat4sprite.GAMESTATE.getSongBG(),		Script = "WarpingEffects/IllusionX.lua"
+}

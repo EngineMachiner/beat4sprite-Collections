@@ -2,21 +2,21 @@
 
 local args = ...
 
-local params = BGA_G.Create( {
-	File = BGA_G.SongBGPath(),
-	BGMirror = true,
-	X_num = 1
+local params = beat4sprite.create( {
+	File = beat4sprite.GAMESTATE.getSongBG(),
+	MirrorX = true,
+	Columns = 1
 } )
 
-params:ParTweak( args )
+params:tweak( args )
 		
 return Def.ActorFrame{
 
-	BGA_G.Load(params),
+	beat4sprite.Load(params),
 
 	Def.ActorFrame{
 		OnCommand=function(af)
-			BGA_G.ObjFuncs(af)
+			beat4sprite.setFunctions(af)
 			af:diffusealpha(1)
 			af:queuecommand("Sequence")
 		end,
@@ -25,23 +25,23 @@ return Def.ActorFrame{
 			af:sleep(2.5):diffusealpha(1)
 			af:queuecommand("Sequence")
 		end,
-		BGA_G.Load( {
+		beat4sprite.Load( {
 			File = "4th/Backgrounds/F.png",
-			X_pos = -0.5
+			posX = -0.5
 		} ),
-		BGA_G.Load( {
+		beat4sprite.Load( {
 			File = "4th/Backgrounds/F2.png",
-			X_pos = 0.5
+			posX = 0.5
 		} )
 	},
 
 	Def.ActorFrame{
-		loadfile( BGA_G.BPath("4thK02A") )( { 
+		loadfile( beat4sprite.Paths.getBGAFile("4thK02A") )( { 
 			Index = 2, 
 			Remove = true 
 		} ),
 		OnCommand=function(af)
-			BGA_G.ObjFuncs(af)
+			beat4sprite.setFunctions(af)
 			af:diffusealpha(0)
 			af:queuecommand("Sequence")
 		end,

@@ -1,36 +1,26 @@
-
-local args = ...
-
-local params = BGA_G.Create( {
+local params = beat4sprite.create {
 
 	{	
 		File = "4th/Sprites/ABCDE 5x4.png",
-		X_num = 4,	Y_num = { -2, 1 },
-		Frames = { 5, 20 }
+		Columns = 4,	Rows = { -2, 1 },
+		States = { 5, 20 },
+		Actors = beat4sprite.Sprite.colorQuad( Color.Black ) .. { onBackground = true }
 	},
 
 	{	
 		File = "4th/Sprites/Gradients/B 5x6.png",
-		X_num = 4,	Y_num = { 0, 1 },
-		Zoom = 1.575,
-		Y_pos = 0.5,
-		Spacing = { 1, 2 },
-		Frames = { 1, 30 },
-		Fade = { 0.5, 0 },
-		FadePeriodBy = 0.5,
-		Blend = "BlendMode_Add",
-		Color = "Rainbow",
-		Commands = { "Mirror", "Fade" }
+		Columns = 4,					Rows = { 0, 1 },
+		Zoom = 1.575,					posY = 0.5,
+		Spacing = { 1, 2 },				States = { 1, 30 },		Fade = { 1, 0.25 },
+		Blend = "BlendMode_Add",		Color = "Rainbow",
+		Commands = "Mirror"
 	}
 
-} )
+}
 
-params[3] = params[2]:Copy()
-params[3]:ParTweak( {	
-	Fade = { -0.5, 0 },
-	Y_pos = - params[2].Y_pos
-} )
+params[3] = params[2]:copy {
+	Fade = { -1, -0.25 },		posY = - params[2].posY,
+	EffectOffset = 0.75,
+}
 
-params:ParTweak( args )
-
-return params:Load()
+return params:tweak(...):Load()

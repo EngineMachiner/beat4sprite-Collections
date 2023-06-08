@@ -1,25 +1,24 @@
 
 local args = ...
 
-local params = BGA_G.Create( {
+local params = beat4sprite.create( {
 
 	{
-		File = BGA_G.SongBGPath(),
+		File = beat4sprite.GAMESTATE.getSongBG(),
 		Script = "WarpingEffects/Spacing.lua"
 	},
 
 	{	
 		File = "4th/Sprites/AB 5x4.png",
-		Frames = { 2, 15 },	X_num = 5,
-		SkipFrame = 3,
-		X_pos = 0.5,	Y_num = { -2, 1 },
+		States = { 2, 15 },	Columns = 10,
+		Rows = { -2, 1 },
 		Blend = "BlendMode_Add",
-		TCV = { -1, 0 },
+		Scroll = { -1, 0 },
 		Commands = "StairsStates"
 	}
 
 } )
 
-params:ParTweak( args )
+params:tweak( args )
 
 return params:Load()

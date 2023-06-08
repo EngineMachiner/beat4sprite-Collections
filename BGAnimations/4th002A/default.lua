@@ -1,34 +1,33 @@
 
-
 local args = ...
 
-local params = BGA_G.Create( {
+local params = beat4sprite.create {
 
 	{	
 		File = "4th/Backgrounds/B.png",
-		BGMirror = true,
-		X_num = 1,		Type = 2,
+		MirrorX = true,
+		Columns = 1,		Type = 2,
 		Script = "WarpingEffects/Flag.lua",
 		Commands = "Rainbow"
 	},
 
 	{	
 		File = "4th/Sprites/AB 5x4.png",
-		Frames = 1,
-		Script = "Particles.lua",
-		Dir = "Left"
+		States = 1,
+		Script = "SpaceEffects/Particles.lua",
+		Move = "Left"
 	},
 
 	{	
 		File = "4th/Sprites/AB 5x4.png",
-		Frames = { 2, 15 },
+		States = { 2, 15 },
 		Blend = "BlendMode_Add",
-		Script = "Particles.lua",
-		Dir = "Left"
+		Script = "SpaceEffects/Particles.lua",
+		Move = "Left"
 	}
 
-} )
+}
 
-params:ParTweak( args )
+params:tweak( args )
 
 return params:Load()

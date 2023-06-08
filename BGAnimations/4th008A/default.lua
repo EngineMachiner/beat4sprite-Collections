@@ -1,15 +1,15 @@
 
 local args = ...
 
-local params = BGA_G.Create( {
+local params = beat4sprite.create( {
 	File = "4th/Sprites/B2 5x4.png",
-	X_num = 4,
-	Y_num = { -2, 1 },
-	Frames = { 1, 15 },
-	Delay = 2,
-	Commands = { "RandomStates" }
+	Columns = 4,
+	Rows = { -2, 1 },
+	States = { 1, 15 },
+	AnimationRate = 2,
+	AnimationTypes = "Random"
 } )
 
-params:ParTweak( args )
+params:tweak( args )
 
 return params:Load()

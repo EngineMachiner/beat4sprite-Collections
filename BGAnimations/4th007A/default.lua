@@ -1,30 +1,30 @@
 
 local args = ...
 
-local params = BGA_G.Create( {
+local params = beat4sprite.create( {
 
 	{	
 		File = "4th/Sprites/BAB 5x4.png",
-		Frames = 13,
-		X_num = { -6, 4 },
-		Y_num = 2,
-		TCV = { 0, -1 },
-		HurryTweenBy = 2
+		States = 13,
+		Columns = { -6, 4 },
+		Rows = 2,
+		Scroll = { 0, -1 },
+		tweenRate = 2
 	},
 
 	{
 		File = "4th/Sprites/BAB 5x4.png",
-		Frames = 12,
-		Dir = "Down",
-		Spin = true,
-		Color = color("1,0.25,0.25,1"),
+		States = 12,
+		Move = "Down",
+		spinAngle = true,
+		Color = color("1, 0.25, 0.25, 1"),
 		Blend = 'add',
 		Alpha = 0.75,
-		Script = "Particles.lua"
+		Script = "SpaceEffects/Particles.lua"
 	}
 
 } )
 
-params:ParTweak( args )
+params:tweak( args )
 
 return params:Load()

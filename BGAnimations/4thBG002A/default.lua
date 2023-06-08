@@ -1,23 +1,23 @@
 
 local args = ...
 
-local params = BGA_G.Create( {
+local params = beat4sprite.create( {
 
 	{	
-		File = BGA_G.SongBGPath(),
-		BGMirror = true,	X_num = 1,
+		File = beat4sprite.GAMESTATE.getSongBG(),
+		MirrorX = true,			Columns = 1,
 		Commands = "Rainbow",	Type = 2,
 		Script = "WarpingEffects/Spacing.lua"
 	},
 
 	{	
 		File = "4th/Sprites/ABCD 5x4.png",
-		Frames = 1,	Dir = "Out",	Spin = true,
+		States = 1,		Move = "Out",	Spin = true,
 		Script = "SpaceEffects/Line.lua"
 	}
 
 } )
 
-params:ParTweak( args )
+params:tweak( args )
 
 return params:Load()
