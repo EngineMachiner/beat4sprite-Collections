@@ -2,12 +2,12 @@
 local sub = ...
 
 local p = {
-	File = "5th/Sprites/BA 4x3.png",	Frames = 9,
-	Dir = "Out",	Type = "Line",
+	File = "5th/Sprites/BA 4x3.png",	States = 9,
+	Move = "Out",	Type = "Line",
 	Script = "SpaceEffects/Line.lua"
 }
 
-BGA_G.ParTweak( p, sub )
+beat4sprite.tweak( p, sub )
 p.Index = 2
 
-return loadfile( BGA_G.BPath("5th001G") )( p )
+return loadfile( beat4sprite.Paths.getBGAFile("5th001G") )( p )

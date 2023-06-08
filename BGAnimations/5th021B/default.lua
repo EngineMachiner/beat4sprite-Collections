@@ -1,10 +1,10 @@
-local params = BGA_G.Create( {
+local params = beat4sprite.create( {
 
 	{
 		File = "5th/Backgrounds/BA.png",
-		X_num = 1,
+		Columns = 1,
 		Commands = "Mirror",
-		BGMirror = true,
+		MirrorX = true,
 		Cleanup = true	
 	},
 
@@ -12,14 +12,14 @@ local params = BGA_G.Create( {
 
 } )
 
-local params_2 = BGA_G.Create( {
+local params_2 = beat4sprite.create( {
 
 	{
 		File = "5th/Sprites/BAB 4x4.png",
-		Frame_i = 3,
-		Frame_l = 4,
-		X_num = { -2, 1 },
-		Y_num = { -2, 1 },
+		firstState = 3,
+		lastState = 4,
+		Columns = { -2, 1 },
+		Rows = { -2, 1 },
 		Commands = "StairsStates",
 		Cleanup = true		
 	},
@@ -29,6 +29,6 @@ local params_2 = BGA_G.Create( {
 } )
 
 return Def.ActorFrame{
-	loadfile( BGA_G.BPath("5th001A") )( params ),
-	loadfile( BGA_G.BPath("5th001A") )( params_2 )
+	loadfile( beat4sprite.Paths.getBGAFile("5th001A") )( params ),
+	loadfile( beat4sprite.Paths.getBGAFile("5th001A") )( params_2 )
 }

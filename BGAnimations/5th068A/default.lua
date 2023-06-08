@@ -6,22 +6,22 @@ local tweaks = {
 	{
 		Cleanup = true,
 		File = "/5th/Backgrounds/CA.png",
-		X_num = 1,
+		Columns = 1,
 		Commands = "Mirror",
-		BGMirror = true
+		MirrorX = true
 	},
 
 	{
 		File = "/5th/Sprites/CAB 5x4.png",
 		Cleanup = true,
-		Frame_i = 11,
-		Frame_l = 15,
-		Dir = "Left",
-		Script = "Particles.lua"
+		firstState = 11,
+		lastState = 15,
+		Move = "Left",
+		Script = "SpaceEffects/Particles.lua"
 	}
 
 }
 
-BGA_G.ParTweak( tweaks, sub )
+beat4sprite.tweak( tweaks, sub )
 
-return loadfile( BGA_G.BPath("5th064A") )( tweaks )
+return loadfile( beat4sprite.Paths.getBGAFile("5th064A") )( tweaks )

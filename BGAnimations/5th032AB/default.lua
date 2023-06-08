@@ -1,1 +1,1 @@
-return loadfile( BGA_G.BPath("5th032AA") )( { Frames = 12 } )
+return loadfile( beat4sprite.Paths.getBGAFile("5th032AA") ) { firstState = 12 }

@@ -6,16 +6,15 @@ local tweaks = {
 	{
 		Cleanup = true,
 		File = "5th/Sprites/DABCD 1x4.png",
-		Frame_l = 4,	X_num = 1,
-		Y_num = { -3, 4 },
-		Y_coord = -1,	FrmDelay = 2,
-		Commands = { "StairsStates", "Move" }
+		lastState = 4,		Columns = 1,
+		Rows = 4,			scrollY = -1,		AnimationRate = 2,
+		AnimationRate = 2,	Commands = "StairsStates"
 	},
 
 	{ Remove = true }
 	
 }
 	
-BGA_G.ParTweak( tweak, sub )
+beat4sprite.tweak( tweaks, sub )
 
-return loadfile( BGA_G.BPath("5th001A") )( tweaks )
+return loadfile( beat4sprite.Paths.getBGAFile("5th001A") )( tweaks )

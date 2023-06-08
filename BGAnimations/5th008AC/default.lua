@@ -1,9 +1,9 @@
 
 local tweaks = {
 	Index = 3,
-	Y_num = 2,
-	Y_coord = -1,
+	Rows = 2,
+	scrollY = -1,
 	Commands = "Move"
 }
 
-return loadfile( BGA_G.BPath("5th008AA") )( tweaks )
+return loadfile( beat4sprite.Paths.getBGAFile("5th008AA") )( tweaks )

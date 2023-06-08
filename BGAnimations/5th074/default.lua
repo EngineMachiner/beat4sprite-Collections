@@ -1,24 +1,24 @@
 
 local sub = ...
 
-local params = BGA_G.Create( {
+local params = beat4sprite.create {
+
 	{	
 		File = "5th/Sprites/DABCDE 4x3.png",
-		Frame_i = 1,	Frame_l = 12,
-		FrmDelay = 2,
-		Commands = { "Move", "Cross", "StairsStates" },
-		X_pos = 1,	X_num = 6,
-		Y_num = 1,	X_coord = 1,
-		StopAtFrame = 2, HurryTweenBy = 0.25
+		firstState = 1,		lastState = 12,
+		posX = 1,			scrollX = 1,
+		Rows = 1,			Columns = 4,
+		tweenRate = 0.5,	Cross = { By = 1, Type = 1 },
 	}
-} )
 
-params[2] = params[1]:Copy()
-params[2]:ParTweak( {
-	File = "5th/Sprites/HSV/DABCDE 4x3.png",
-	X_pos = 0,	FrmDelay = nil
-} )
+}
 
-params:ParTweak(sub)
+params[2] = params[1]:copy():tweak {
+	File = "5th/Sprites/HSV/DABCDE 4x3.png",		posX = 0
+}
+
+params[1]:tweak { Actors = beat4sprite.Sprite.colorQuad( Color.Black ) .. { onBackground = true } }
+
+params:tweak(sub)
 
 return params:Load()

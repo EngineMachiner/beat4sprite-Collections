@@ -1,4 +1,4 @@
 
-local tweaks = { Index = 2, Dir = "Down" }
+local tweaks = { Index = 2, Move = "Down" }
 
-return loadfile( BGA_G.BPath("5th068A") )( tweaks )
+return loadfile( beat4sprite.Paths.getBGAFile("5th068A") )( tweaks )

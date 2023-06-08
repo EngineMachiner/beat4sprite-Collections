@@ -1,7 +1,7 @@
 
-local params = BGA_G.Create( {
-	Frame_i = 13,
-	Frame_l = 16
+local params = beat4sprite.create( {
+	firstState = 13,
+	lastState = 16
 } )
 
-return loadfile( BGA_G.BPath("5th022AD") )( params )
+return loadfile( beat4sprite.Paths.getBGAFile("5th022AD") )( params )

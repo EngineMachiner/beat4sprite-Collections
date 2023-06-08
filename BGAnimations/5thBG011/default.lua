@@ -1,30 +1,17 @@
 
-local sub = ... or {}
-sub.Sleep = sub.Sleep or 1
+local sub = {
 
-local t = Def.ActorFrame{}
+	{ Actors = loadfile( beat4sprite.Paths.getBGAFile("5thBG000") )() },
 
-t[#t+1] = loadfile( BGA_G.BPath("5thBG000") )( { 
-	Actors = { BGA_G.IDest_Quad() }
-} )
-
-t[#t+1] = Def.ActorFrame{
-
-	BGA_G.BGSet( BGA_G.SongBGPath() ):Load(),
-
-	OnCommand=function(self)
-		BGA_G.ObjFuncs(self)
-		self:queuecommand("Repeat")
-	end,
-
-	RepeatCommand=function(self)
-		local d = self:GetDelay() * 4
-		d = d * sub.Sleep
-		self:diffusealpha(1):sleep(d)
-		self:diffusealpha(0):sleep(d)
-		self:queuecommand("Repeat")
-	end
+	{ 
+		Actors = { 
+			loadfile( beat4sprite.Paths.getBGAFile("5thBG000") )(),
+			beat4sprite.Sprite.blendQuad("BlendMode_InvertDest")
+		}
+	}
 
 }
 
-return Def.ActorFrame{ t }
+beat4sprite.tweak( sub, ... )
+
+return beat4sprite.Load { Script = "Cyclic/Actor.lua", Set = sub }

@@ -1,3 +1,3 @@
-return loadfile( BGA_G.BPath("5thBG004A") )( { 
+return loadfile( beat4sprite.Paths.getBGAFile("5thBG004A") )( { 
 	Commands = { "Mirror", "Rainbow" }
 } )

@@ -1,8 +1,8 @@
 
 local sub = ...
 
-local params = { Delay = 2 }
+local params = { AnimationRate = 2 }
 
-BGA_G.ParTweak( params, sub )
+beat4sprite.tweak( params, sub )
 
-return loadfile( BGA_G.BPath("5th014A") )( params )
+return loadfile( beat4sprite.Paths.getBGAFile("5th014A") )( params )

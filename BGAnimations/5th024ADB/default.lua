@@ -1,33 +1,33 @@
 
 local tweaks = ...
 
-local params = BGA_G.Create( {
+local params = beat4sprite.create( {
 
 	{
 		File = "/5th/Sprites/CAB 5x4.png",
-		X_num = 5,
-		Y_num = { -2, 1 },
-		Frame_i = 10,
+		Columns = 5,
+		Rows = { -2, 1 },
+		firstState = 10,
 		Cleanup = true
 	},
 
 	{
 		File = "/5th/Sprites/CAB 5x4.png",
-		Frame_i = 1,	Clockwise = true,
+		firstState = 1,	Clockwise = true,
 		Script = "SpaceEffects/RoundTrace.lua",
 		Type = "Spiral"
 	},
 
 	{	
 		File = "/5th/Sprites/CAB 5x4.png",
-		Frame_i = 1,	Dir = "Out",
+		firstState = 1,	Move = "Out",
 		Script = "SpaceEffects/RoundTrace.lua",
 		Type = "Spiral"
 	}
 
 } )
 
-params:ParTweak(tweaks)
+params:tweak(tweaks)
 	
 return Def.ActorFrame{
 
@@ -36,11 +36,11 @@ return Def.ActorFrame{
 	Def.ActorFrame{
 		params[2]:Load(),
 		OnCommand=function(self)
-			BGA_G.ObjFuncs(self)
+			beat4sprite.setFunctions(self)
 			self:queuecommand("Rep")
 		end,
 		RepCommand=function(self)
-			local d = self:GetDelay() * 8
+			local d = self:getDelay() * 8
 			self:sleep(d - 0.25):linear(0.25):diffusealpha(0)
 			self:sleep(d - 0.25):linear(0.25):diffusealpha(1)
 			self:queuecommand("Rep")
@@ -50,12 +50,12 @@ return Def.ActorFrame{
 	Def.ActorFrame{
 		params[3]:Load(),
 		OnCommand=function(self)
-			BGA_G.ObjFuncs(self)
+			beat4sprite.setFunctions(self)
 			self:diffusealpha(0)
 			self:queuecommand("Rep")
 		end,
 		RepCommand=function(self)
-			local d = self:GetDelay() * 8
+			local d = self:getDelay() * 8
 			self:sleep(d - 0.25):linear(0.25):diffusealpha(1)
 			self:sleep(d - 0.25):linear(0.25):diffusealpha(0)
 			self:queuecommand("Rep")

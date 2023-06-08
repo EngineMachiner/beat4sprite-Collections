@@ -1,10 +1,4 @@
-return loadfile( BGA_G.BPath("5th065") )( { 
-
-	{	File = BGA_G.SongBGPath()	},
-
-	{ 
-		File = "5th/Backgrounds/AB.png",
-		Sleep = 2
-	}
-
-} )
+return loadfile( beat4sprite.Paths.getBGAFile("5th065") ) {
+	File = { beat4sprite.GAMESTATE.getSongBG(), "5th/Backgrounds/AB.png" },
+	CycleTime = 2
+} 

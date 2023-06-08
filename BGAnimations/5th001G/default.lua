@@ -1,16 +1,20 @@
 
-local sub = ...
+local external = ...
 
-local tweaks = {
+local tweaks = beat4sprite.create {
+
 	{
 		File = "5th/Backgrounds/B.png",
-		X_num = { -1, 1 },
+		Columns = { -1, 1 },
 		Commands = "Mirror",
-		BGMirror = true,
+		MirrorX = true,
 		Cleanup = true
-	},	{}
+	},	
+	
+	{}
+
 }
 
-BGA_G.ParTweak( tweaks, sub )
+tweaks:tweak( external )
 
-return loadfile( BGA_G.BPath("5th001A") )( tweaks )
+return loadfile( beat4sprite.Paths.getBGAFile("5th001A") )( tweaks )

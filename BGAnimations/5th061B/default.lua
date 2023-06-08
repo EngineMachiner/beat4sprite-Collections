@@ -1,8 +1,8 @@
 
 local tweaks = {
 	Index = 2,
-	Script = "Particles.lua",	Dir = "Up",
-	Commands = "RandomStates"
+	Script = "SpaceEffects/Particles.lua",	Move = "Up",
+	AnimationTypes = "Random"
 }
 
-return loadfile( BGA_G.BPath("5th061A") )( tweaks )
+return loadfile( beat4sprite.Paths.getBGAFile("5th061A") )( tweaks )

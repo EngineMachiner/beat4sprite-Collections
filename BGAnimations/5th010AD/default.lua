@@ -1,1 +1,1 @@
-return loadfile( BGA_G.BPath("5th010AC") )( { X_coord = 0 } )
+return loadfile( beat4sprite.Paths.getBGAFile("5th010AC") ) { scrollX = 0 }

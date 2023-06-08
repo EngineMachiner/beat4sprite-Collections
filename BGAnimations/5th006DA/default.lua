@@ -1,15 +1,10 @@
 
-local tweaks = {
-	Commands = { "StairsStates", "Move" },
-	Cross = 4
-}
+local tweaks = { Cross = { Type = 3 } }
 
-local t = loadfile( BGA_G.BPath("5th006B") )( tweaks )
+local t = loadfile( beat4sprite.Paths.getBGAFile("5th006B") )( tweaks )
 
-tweaks.File = "5th/Sprites/HSV/DABCD2 1x4.png"
-tweaks.Commands = { "StairsStates", "Move" }
-tweaks.Cross = nil
+tweaks.File = "5th/Sprites/HSV/DABCD2 1x4.png"		tweaks.Cross = nil
 
 return Def.ActorFrame{
-	loadfile( BGA_G.BPath("5th006B") )( tweaks ), t
+	loadfile( beat4sprite.Paths.getBGAFile("5th006B") )( tweaks ), t
 }

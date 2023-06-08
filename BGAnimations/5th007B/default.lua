@@ -1,11 +1,7 @@
 
 local tweaks = {
-
-	
-	X_num = { -4, 6 },
-	X_coord = -1,
-	Commands = { "StairsStates", "Move" }
-
+	Columns = { -4, 6 },	scrollX = -1,
+	Commands = { "Move" }
 }
 
-return loadfile( BGA_G.BPath("5th007A") )( tweaks )
+return loadfile( beat4sprite.Paths.getBGAFile("5th007A") )( tweaks )

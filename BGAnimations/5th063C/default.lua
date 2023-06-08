@@ -1,3 +1,3 @@
-return loadfile( BGA_G.BPath("5th063A") )( { 
-	Dir = "Down"
+return loadfile( beat4sprite.Paths.getBGAFile("5th063A") )( { 
+	Move = "Down"
 } )	

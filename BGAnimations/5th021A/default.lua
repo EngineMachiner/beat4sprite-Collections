@@ -1,14 +1,14 @@
 
 local params = {
 
-	Load = BGA_G.Load,
-	FileTweak = BGA_G.BPath("5th001A"),
+	Load = beat4sprite.Load,
+	tweakScript = beat4sprite.Paths.getBGAFile("5th001A"),
 
 	{
 		File = "5th/Backgrounds/BA.png",
-		X_num = 1,
+		Columns = 1,
 		Commands = "Mirror",
-		BGMirror = true,
+		MirrorX = true,
 		Cleanup = true
 	},
 
@@ -16,27 +16,27 @@ local params = {
 
 }
 
-local params_2 = BGA_G.Create( {
+local params_2 = beat4sprite.create {
 
 	{
 		File = "5th/Sprites/BAB 4x4.png",
-		Frame_i = 1,	Frame_l = 2,
-		X_num = { -2, 1 },		Y_num = { -2, 1 },
-		CrossType = "Y", 	Cross = { 0, 1 },
+		firstState = 1,	lastState = 2,
+		Columns = { -2, 1 },		Rows = { -2, 1 },
+		Cross = { By = 2, Type = 3, Off = 1 },
 		Commands = "StairsStates"	
 	}
 
-} )
+}
 
 local params_3 = {
 
-	Load = BGA_G.Load,
-	FileTweak = BGA_G.BPath("5th001A"),
+	Load = beat4sprite.Load,
+	tweakScript = beat4sprite.Paths.getBGAFile("5th001A"),
 
 	{
 		File = "5th/Sprites/BAB 4x4.png",
-		Frame_i = 3,	Frame_l = 4,
-		X_num = { 0, 1 },	Y_num = { -2, 1 },
+		firstState = 3,	lastState = 4,
+		Columns = { 0, 1 },	Rows = { -2, 1 },
 		Commands = "StairsStates",
 		Cleanup = true
 	},

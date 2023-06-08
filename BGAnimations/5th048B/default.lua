@@ -19,6 +19,6 @@ return Def.ActorFrame{
 
 	},
 
-	loadfile( BGA_G.BPath("5th048A") )( { Index = 2, Remove = true } )
+	loadfile( beat4sprite.Paths.getBGAFile("5th048A") )( { Index = 2, Remove = true } )
 	
 }

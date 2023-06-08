@@ -1,29 +1,28 @@
 
 local sub = ...
 
-local params = BGA_G.Create( {
+local params = beat4sprite.create {
 
-	FileTweak = BGA_G.BPath("5th001A"),
+	tweakScript = beat4sprite.Paths.getBGAFile("5th001A"),
 
 	{
 		File = "5th/Sprites/BAB 4x4.png",
-		X_num = { -4, 3 },	Y_num = { -2, 1 },
-		Frame_i = 5,	Frame_l = 6,
+		Columns = { -4, 3 },	Rows = { -2, 1 },
+		firstState = 5,	lastState = 6,
 		Cleanup = true
 	},
 
 	{ Remove = true	}
 
-} )
+}
 
-local params_2 = BGA_G.Create( {
+local params_2 = beat4sprite.create {
 	Index = 3,
 	File = "5th/Sprites/B 4x3.png",
-	Frame_i = 1,	Frame_l = 6,
+	firstState = 1,	lastState = 6,
 	Script = "WallBumps.lua"
-} )
+}
 
-params:ParTweak( sub )
-params_2:ParTweak( sub )
+params:tweak( sub )				params_2:tweak( sub )
 
 return Def.ActorFrame{ params:Load(), params_2:Load() }

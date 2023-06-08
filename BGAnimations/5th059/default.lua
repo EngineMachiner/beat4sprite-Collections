@@ -1,16 +1,16 @@
 
 local sub = ...
 
-local params = BGA_G.Create( {
+local params = beat4sprite.create( {
 	File = "5th/Sprites/DABC 4x4.png",
-	X_num = { -4, 3 },
-	Y_num = { -2, 1 },
-	BGMirror = true,
+	Columns = { -4, 3 },
+	Rows = { -2, 1 },
+	MirrorX = true,
 	Commands = { "LineStates", "Mirror" },
-	Frame_i = 7,
-	Frame_l = 8
+	firstState = 7,
+	lastState = 8
 } )
 
-params:ParTweak( sub )
+params:tweak( sub )
 
 return params:Load()

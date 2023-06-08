@@ -1,6 +1,7 @@
-local params = BGA_G.Create( {
-	Frame_i = 9,	Frame_l = 10,
-	Commands = "NoAnimation"
+local params = beat4sprite.create( {
+	firstState = 9,	lastState = 10,
+	Commands = "StatePerSprite",
+	AnimationTypes = "Static"
 } )
 
-return loadfile( BGA_G.BPath("5th023C") )( params )
+return loadfile( beat4sprite.Paths.getBGAFile("5th023C") )( params )

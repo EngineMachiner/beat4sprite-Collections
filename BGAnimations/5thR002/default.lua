@@ -1,18 +1,18 @@
 
 local scripts = {
-	BGA_G.BPath("5thR003B"),
-	BGA_G.BPath("5thR003C"),
-	BGA_G.BPath("5thR003D"),
-	BGA_G.BPath("5thR003E")
+	beat4sprite.Paths.getBGAFile("5thR003B"),
+	beat4sprite.Paths.getBGAFile("5thR003C"),
+	beat4sprite.Paths.getBGAFile("5thR003D"),
+	beat4sprite.Paths.getBGAFile("5thR003E")
 }
 
-local t = BGA_G.Frame()
+local t = beat4sprite.ActorFrame()
 
 for i = #scripts, 1, -1 do
 	t[#t+1] = Def.ActorFrame{
 		loadfile(scripts[i])(),
 		OnCommand=function(self)
-			BGA_G.ObjFuncs(self)
+			beat4sprite.setFunctions(self)
 			self:diffusealpha(1):sleep( ( i - 1 ) * 2 )
 			self:diffusealpha(0):sleep( ( #scripts - 1 ) * 2 )
 			self:queuecommand("Repeat")
@@ -21,7 +21,7 @@ for i = #scripts, 1, -1 do
 			self:queuecommand("Repeat")
 		end,
 		RepeatCommand=function(self)
-			local d = self:GetDelay() * 2
+			local d = self:getDelay() * 2
 			self:diffusealpha(1):sleep(d)
 			self:diffusealpha(0):sleep( ( #scripts - 1 ) * d )
 			self:queuecommand("Go")

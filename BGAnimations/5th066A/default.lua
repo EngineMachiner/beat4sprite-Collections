@@ -1,16 +1,16 @@
 
 local sub = ...
 
-local params = BGA_G.Create( {
+local params = beat4sprite.create( {
 	File = "/5th/Sprites/CAB 5x4.png",
-	X_num = { -6, 5 },	Y_num = { -2, 1 },
-	Frame_i = 4,	Delay = 2,
-	Commands = "Move",	X_coord = 1
+	Columns = { -6, 5 },	Rows = { -2, 1 },
+	firstState = 4,	AnimationRate = 2,
+	Commands = "Move",	scrollX = 1
 } )
 
-params:ParTweak( sub )
+params:tweak( sub )
 
 return Def.ActorFrame{
-	loadfile( BGA_G.BPath("5th042A") )( { Index = 3, Remove = true } ),
+	loadfile( beat4sprite.Paths.getBGAFile("5th042A") )( { Index = 3, Remove = true } ),
 	params:Load()
 }

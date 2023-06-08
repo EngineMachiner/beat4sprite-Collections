@@ -2,7 +2,8 @@
 local tweaks = {
 	Index = 3,
 	Script = "SpaceEffects/RoundTrace.lua",
-	Type = "Whirl", Commands = "FramePerSprite"
+	Type = "Whirl",		Commands = "StatePerSprite",
+	AnimationTypes = "Static"
 }
 
-return loadfile( BGA_G.BPath("5th028B") )( tweaks )
+return loadfile( beat4sprite.Paths.getBGAFile("5th028B") )( tweaks )

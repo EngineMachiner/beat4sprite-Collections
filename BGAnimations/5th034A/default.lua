@@ -5,10 +5,8 @@ local tweaks = {
 
 	{ 
 		File = "5th/Backgrounds/D.png",
-		X_num = { -1, 2 },
-		X_coord = -1,
-		Delay = 3,
-		Commands = "Move",
+		Columns = { -1, 2 },
+		scrollX = -1,
 		Cleanup = true
 	},
 
@@ -16,6 +14,6 @@ local tweaks = {
 
 }
 
-BGA_G.ParTweak( tweaks, sub )
+beat4sprite.tweak( tweaks, sub )
 	
-return loadfile( BGA_G.BPath("5th001A") )( tweaks )
+return loadfile( beat4sprite.Paths.getBGAFile("5th001A") )( tweaks )

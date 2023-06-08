@@ -1,20 +1,20 @@
 
-local sub = ...
+local external = ...
 
-local tweaks = {
+local tweaks = beat4sprite.create {
 
 	{
 		Cleanup = true,
 		File = "5th/Sprites/DABCD 1x4.png",
-		Frame_l = 4,	X_num = 1,
-		Y_num = { -3, 4 },	Y_coord = -1,
-		Commands = { "StairsStates", "Move" }
+		lastState = 4,	Columns = 1,
+		Rows = 4,	scrollY = -1,
+		Commands = "StairsStates"
 	},
 
 	{ Remove = true }
 	
 }
 
-BGA_G.ParTweak( tweaks, sub )
+tweaks:tweak( external )
 
-return loadfile( BGA_G.BPath("5th001A") )( tweaks )
+return loadfile( beat4sprite.Paths.getBGAFile("5th001A") )( tweaks )

@@ -1,13 +1,11 @@
 
 local sub = ...
 
-local params = BGA_G.Create( {
-	File = BGA_G.SongBGPath(),
-	X_num = 2,
-	Commands = { "Mirror", "Move" },
-	BGMirror = true,	X_coord = -1
-} )
+local params = beat4sprite.create {
+	File = beat4sprite.GAMESTATE.getSongBG(),		Columns = 2,
+	scrollX = -1, 	MirrorX = true
+}
 
-params:ParTweak( sub )
+params:tweak( sub )
 
 return params:Load()

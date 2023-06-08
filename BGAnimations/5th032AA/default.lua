@@ -2,22 +2,23 @@
 local sub = ...
 
 local params = {
-	Frames = 11,	Commands = ""
+	firstState = 11,	Commands = "",
+	Remove = "lastState"
 }
 
-local params_2 = BGA_G.Create( {
+local params_2 = beat4sprite.create( {
 
 	File = "5th/Sprites/DABC 4x4.png",
-	Frame_i = 9,	Frame_l = 10,
-	X_num = { -4, 3 },	Y_num = { -2, 1 },
-	Delay = 4,	SpinC = true,
+	firstState = 9,	lastState = 10,
+	Columns = { -4, 3 },	Rows = { -2, 1 },
+	AnimationRate = 4,	SpinStyle = 2,
 	Commands = { "SpinXY" }
 
 } )
 
-BGA_G.ParTweak( params, sub )
+beat4sprite.tweak( params, sub )
 	
 return Def.ActorFrame{
-	loadfile( BGA_G.BPath("5th031A") )( params ),
+	loadfile( beat4sprite.Paths.getBGAFile("5th031A") )( params ),
 	params_2:Load()
 }

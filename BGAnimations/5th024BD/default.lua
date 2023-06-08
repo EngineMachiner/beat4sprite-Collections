@@ -1,12 +1,12 @@
 
 local sub = ...
-local params = BGA_G.Create( {
+local params = beat4sprite.create( {
 
 	{
 		File = "5th/Sprites/CAB 5x4.png",
-		X_num = 5,
-		Y_num = { -2, 1 },
-		Frame_i = 10,
+		Columns = 5,
+		Rows = { -2, 1 },
+		firstState = 10,
 		Cleanup = true
 	},
 
@@ -14,16 +14,16 @@ local params = BGA_G.Create( {
 
 } )
 
-local params_2 = BGA_G.Create( {
+local params_2 = beat4sprite.create( {
 	File = "5th/Sprites/CA 4x3.png",
-	Frame_i = 7,	Dir = "Out",
+	firstState = 7,	Move = "Out",
 	Flat = true,	Type = "Line",
-	Script = "SpaceEffects/Line.lua"
+	Script = "SpaceEffects/Line"
 } )
 
-params_2:ParTweak(sub)
+params_2:tweak(sub)
 
 return Def.ActorFrame{
-	loadfile( BGA_G.BPath("5th001A") )( params ),
+	loadfile( beat4sprite.Paths.getBGAFile("5th001A") )( params ),
 	params_2:Load()
 }

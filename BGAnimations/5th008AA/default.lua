@@ -5,10 +5,10 @@ local tweaks = {
 
 	{
 		File = "/5th/Sprites/AB 4x4.png",
-		Frame_i = 7,
-		Frame_l = 8,
-		X_num = { -4, 3 },
-		Y_num = { -2, 1 },
+		firstState = 7,
+		lastState = 8,
+		Columns = { -4, 3 },
+		Rows = { -2, 1 },
 		Cleanup = true
 	},
 
@@ -16,18 +16,18 @@ local tweaks = {
 
 }
 
-local a = loadfile( BGA_G.BPath("5th001A") )( tweaks )
+local a = loadfile( beat4sprite.Paths.getBGAFile("5th001A") )( tweaks )
 
-local params = BGA_G.Create( {
+local params = beat4sprite.create( {
 	Index = 3,
 	File = "/5th/Sprites/ABC 4x4.png",
-	X_num = { -5, 4 },
-	Y_num = { -2, 1 },
-	Frame_i = 5,
-	Frame_l = 8,
+	Columns = { -4, 3 },
+	Rows = { -2, 1 },
+	firstState = 5,
+	lastState = 8,
 	Commands = "RandomDelays"
 } )
 
-params:ParTweak( sub )
+params:tweak( sub )
 
-return Def.ActorFrame{ a, BGA_G.Load(params) }
+return Def.ActorFrame{ a, beat4sprite.Load(params) }

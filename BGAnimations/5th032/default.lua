@@ -1,19 +1,19 @@
 
 local params = {
-	Delay = 4,	Commands = ""
+	AnimationRate = 4,		Commands = ""
 }
 
-local params_2 = BGA_G.Create( {
+local params_2 = beat4sprite.create {
 
 	File = "5th/Sprites/DABC 4x4.png",
-	Frame_i = 9,	Frame_l = 10,
-	X_num = { -4, 3 },	Y_num = { -2, 1 },
-	Delay = 4,	SpinC = true,
-	Commands = { "SpinXY" }
+	firstState = 9,			lastState = 10,
+	Columns = { -4, 3 },	Rows = { -2, 1 },
+	AnimationRate = 4,		SpinStyle = 2,
+	Commands = "SpinXY",
 
-} )
+}
 
 return Def.ActorFrame{
-	loadfile( BGA_G.BPath("5th031A") )( params ),
+	loadfile( beat4sprite.Paths.getBGAFile("5th031A") )( params ),
 	params_2:Load()
 }

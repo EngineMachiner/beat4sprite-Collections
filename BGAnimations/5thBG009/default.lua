@@ -1,39 +1,18 @@
-
-
-local params = BGA_G.Create( {
-
-	File = "/5th/Sprites/DABC 4x4.png",
-	Frame_i = 11,
-	Frame_l = 12,
-	Dir = "Down",
-	Commands = { "TwoSprites" },
-	Spin = true,	Script = "Particles.lua"
-
-} )
-
-return Def.ActorFrame{
-
-	Def.Quad{
-		OnCommand=function(self)
-			self:diffuse(Color.Black)
-			self:FullScreen()
-			self:visible(true)
-		end,
-		LoseFocusCommand=function(self)
-			self:visible(false)
-		end
-	},
-
-	BGA_G.Load( {
-		File = BGA_G.SongBGPath(),
-		X_num = 1,
-		BGMirror = true,
-		Commands = { "Fade", "Mirror" },
-		Ramp = true,
-		Fade = { 0, 1 },
-		Color = color("#808080")
+return beat4sprite.Load {
+	
+	beat4sprite.Sprite.bgTemplate( beat4sprite.create {
+		File = beat4sprite.GAMESTATE.getSongBG(),
+		Commands = "Fade",		Ramp = true,		Color = color("#808080"),
+		Actors = beat4sprite.Sprite.colorQuad( Color.Black ) .. { onBackground = true }
 	} ),
 
-	params:Load()
+	{
+
+		File = "/5th/Sprites/DABC 4x4.png",
+		firstState = 11,		lastState = 12,
+		Move = "Down",			AnimationTypes = "Static",
+		spinAngle = true,		Script = "SpaceEffects/Particles.lua"
+
+	}
 
 }

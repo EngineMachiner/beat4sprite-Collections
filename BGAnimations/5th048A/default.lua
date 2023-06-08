@@ -5,7 +5,7 @@ local t = Def.ActorFrame{}
 
 local params = {
 
-	FileTweak = BGA_G.BPath("5th001A"),
+	tweakScript = beat4sprite.Paths.getBGAFile("5th001A"),
 
 	{ Remove = true },
 
@@ -17,30 +17,30 @@ local params = {
 	}
 
 }
-BGA_G.ParTweak( params, sub )
-BGA_G.Load( params, t )
+beat4sprite.tweak( params, sub )
+beat4sprite.Load( params, t )
 
-params = BGA_G.Create( {
+params = beat4sprite.create( {
 	Index = 3,
 	File = "5th/Sprites/HSV/DA 4x3.png",
-	Frame_i = 5,
-	X_num = { -4, 3 },
-	Y_num = 1,
-	Commands = "ZWrite"
+	firstState = 5,
+	Columns = { -4, 3 },
+	Rows = 1,
+	Commands = "MaskSource"
 } )
-params:ParTweak( sub )
+params:tweak( sub )
 params:Load(t)
 
-params = BGA_G.Create( {
+params = beat4sprite.create( {
 	Index = 4,
 	File = "5th/Sprites/HSV/DA 4x3.png",
-	Frame_i = 4,
-	X_num = { -4, 3 },
-	Y_num = { -1, 2 },
-	Y_coord = 1,
-	Commands = { "ZTest", "Move" }
+	firstState = 4,
+	Columns = { -4, 3 },
+	Rows = { -1, 2 },
+	scrollY = 1,
+	Commands = { "MaskDestination", "Move" }
 } )
-params:ParTweak( sub )
+params:tweak( sub )
 params:Load(t)
 
 return Def.ActorFrame{ t }

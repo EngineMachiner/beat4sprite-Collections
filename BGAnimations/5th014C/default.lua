@@ -1,19 +1,19 @@
 
 local sub = ...
-local params = { Y_num = 2, Commands = "" }
+local params = { Rows = 2, Commands = "" }
 
-local params_2 = BGA_G.Create( {
+local params_2 = beat4sprite.create {
 	Index = 3,
 	File ="5th/Sprites/DABC 4x4.png",
-	X_num = { -4, 3 },		Y_num = 2,
-	HurryTweenBy = 1.5,		Commands = "Move",
-	Y_coord = -1,	Frame_i = 1,	Frame_l = 2
-} )
+	Columns = { -4, 3 },		Rows = 2,
+	tweenRate = 1.5,			Commands = "Move",
+	scrollY = -1,	firstState = 1,	lastState = 2
+}
 
-BGA_G.ParTweak(params, sub)
-BGA_G.ParTweak(params_2, sub)
+beat4sprite.tweak(params, sub)
+beat4sprite.tweak(params_2, sub)
 
 return Def.ActorFrame{
-	loadfile( BGA_G.BPath("5th014A") )( params ),
+	loadfile( beat4sprite.Paths.getBGAFile("5th014A") )( params ),
 	params_2:Load()
 }

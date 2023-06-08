@@ -1,12 +1,12 @@
 
-local params = BGA_G.Create( {
+local params = beat4sprite.create( {
 
 	{
 		File = "5th/Sprites/CAB 5x4.png",
-		Frame_i = 8,
+		firstState = 8,
 		Cleanup = true,
-		X_num = 5,
-		Y_num = { -2, 1 } 
+		Columns = 5,
+		Rows = { -2, 1 } 
 	},
 
 	{ Remove = true }
@@ -14,9 +14,9 @@ local params = BGA_G.Create( {
 } )
 
 return Def.ActorFrame{
-	loadfile( BGA_G.BPath("5th001A") )( params ),
-	BGA_G.Load( {
-		Index = 3, Frame_i = 1,
+	loadfile( beat4sprite.Paths.getBGAFile("5th001A") )( params ),
+	beat4sprite.Load( {
+		Index = 3, firstState = 1,
 		File = "5th/Sprites/CAB 5x4.png",
 		Script = "SpaceEffects/Bounce.lua"
 	} )

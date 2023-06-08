@@ -3,13 +3,13 @@ local sub = ...
 
 local pars = {
 
-	FileTweak = BGA_G.BPath("5th001A"),
+	tweakScript = beat4sprite.Paths.getBGAFile("5th001A"),
 
 	{ 
 		File = "5th/Sprites/DA 4x3.png",
-		X_num = { -4, 3 },	Y_num = { -2, 1 },
-		Y_coord = -1,	Frame_i = 12,
-		Delay = 2,	Commands = "Move",
+		Columns = { -4, 3 },	Rows = { -2, 1 },
+		scrollY = -1,	firstState = 12,
+		AnimationRate = 2,	Commands = "Move",
 		Cleanup = true
 	},
 
@@ -17,7 +17,7 @@ local pars = {
 
 }
 
-pars = BGA_G.Create( pars )
-pars:ParTweak( sub )
+pars = beat4sprite.create( pars )
+pars:tweak( sub )
 
 return pars:Load()

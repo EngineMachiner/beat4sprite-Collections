@@ -1,19 +1,18 @@
 
-local params = BGA_G.Create( {
+local params = beat4sprite.create {
+
 	{
 		File = "5th/Sprites/HSV/D 5x4.png",
-		Y_num = { -3, 4 },
-		Frames = { 1, 20, Type = "OnlyRow" },
-		X_num = 5,	HurryTweenBy = 2,
-		Commands = { "Move", "StairsStates" },
-		Y_coord = -1
+		Rows = { -3, 4 },		States = { 1, 20, Types = "XY-Skip" },
+		Columns = 5,			tweenRate = 2,
+		scrollY = -1
 	}
-} )
 
-params[2] = params[1]:Copy()
-params[2]:ParTweak( {
-	Class = "Quad",		Color = "Rainbow",
-	Commands = { "Move", "StairsStates", "Fade", "Blend" }
-} )
+}
+
+params[2] = params[1]:copy {
+	Fade = { x = 1, y = 1 },
+	Class = "Quad",		Color = "Rainbow",		Commands = "Blend"
+}
 
 return params:Load()

@@ -3,36 +3,37 @@ local sub = ...
 
 local params = {
 
-	FileTweak = BGA_G.BPath("5th001A"),
+	tweakScript = beat4sprite.Paths.getBGAFile("5th001A"),
 
 	{
 		File = "5th/Sprites/D 5x4.png",
-		X_num = 5,	Y_num = { -2, 1 },
-		Frame_i = 1,	Frame_l = 20,
-		Commands = "FramePerSprite",
+		Columns = 5,	Rows = { -2, 1 },
+		firstState = 1,	lastState = 20,
+		Commands = "StatePerSprite",
+		AnimationTypes = "Static",
 		Cleanup = true
 	},
 
 	{ Remove = true }
 
 }
-params = BGA_G.Create(params)
+params = beat4sprite.create(params)
 
-params_2 = params:Copy()
-params_2:ParTweak( {
+params_2 = params:copy()
+params_2:tweak( {
 	Index = 1,
 	File = "5th/Sprites/HSV/D 5x4.png",
-	Commands = { "FramePerSprite", "Pulse" }
+	Commands = { "StatePerSprite", "Pulse" }
 } )
 
-local params_3 = params[1]:Copy()
-params_3:ParTweak( { 
+local params_3 = params[1]:copy()
+params_3:tweak( { 
 	Fade = { 1, 1 },	Class = "Quad",
 	Color = "Rainbow",
 	Commands = { "Pulse", "Fade", "Blend" }
 } )
 
-params_3:ParTweak( sub )
+params_3:tweak( sub )
 
 return Def.ActorFrame{ 
 	params:Load(),		params_2:Load(),

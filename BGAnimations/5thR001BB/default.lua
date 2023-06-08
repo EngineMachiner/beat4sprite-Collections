@@ -1,10 +1,10 @@
 
 return Def.ActorFrame{
 
-	loadfile(BGA_G.BPath("5thR001A"))(),
-	BGA_G.Load( {
+	loadfile(beat4sprite.Paths.getBGAFile("5thR001A"))(),
+	beat4sprite.Load( {
 		File = "/5th/Sprites/DABCDE 4x3.png",
-		Frame_i = 1,	Frame_l = 12,
+		firstState = 1,	lastState = 12,
 		Script = "SpaceEffects/RoundTrace.lua",
 		Clockwise = true
 	} )

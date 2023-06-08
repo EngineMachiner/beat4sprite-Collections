@@ -1,15 +1,15 @@
 
 local sub = ...
 
-local params = BGA_G.Create( {
+local params = beat4sprite.create( {
 
-	FileTweak = BGA_G.BPath("5th001A"),
+	tweakScript = beat4sprite.Paths.getBGAFile("5th001A"),
 
 	{
 		File = "5th/Sprites/DABC 4x4.png",
-		X_num = { -4, 5 },	Y_num = 2,
-		Frame_i = 15,	X_coord = -1,
-		Y_coord = -1,	Commands = "Move",
+		Columns = { -4, 5 },	Rows = 2,
+		firstState = 15,	scrollX = -1,
+		scrollY = -1,	Commands = "Move",
 		Cleanup = true
 	},
 
@@ -17,22 +17,23 @@ local params = BGA_G.Create( {
 
 } )
 
-local params_2 = params:Copy()
-params_2[1]:ParTweak( {
-	Class = "Quad",		Color = "RainbowFlash",
+local params_2 = params:copy()
+params_2[1]:tweak( {
+	Class = "Quad",		Color = "RainbowFlashing",
 	Commands = { "Move", "Blend" }
 } )
 
-local params_3 = BGA_G.Create( {
+local params_3 = beat4sprite.create( {
 	Index = 3,
 	File = "5th/Sprites/DABC 4x4.png",
-	Frame_i = 11,	Frame_l = 12,
-	Dir = "Down",	Spin = true,	Shade = true,
-	Commands = "TwoSprites",
-	Script = "Particles.lua"
+	firstState = 11,	lastState = 12,
+	Move = "Down",	spinAngle = true,	Shade = true,
+	AnimationTypes = "Static",
+	Command = "StatePerSprite",
+	Script = "SpaceEffects/Particles.lua"
 } )
 
-params_3:ParTweak( sub )
+params_3:tweak( sub )
 
 return Def.ActorFrame{ 
 	params:Load(),		params_2:Load(),

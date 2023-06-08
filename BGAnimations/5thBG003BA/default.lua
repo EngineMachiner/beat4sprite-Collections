@@ -1,3 +1,1 @@
-return loadfile( BGA_G.BPath("5thBG003AA") )( { 
-    Dir = "Out" 
-} )
+return loadfile( beat4sprite.Paths.getBGAFile("5thBG003AA") ) { Backwards = true }

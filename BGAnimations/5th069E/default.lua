@@ -1,12 +1,12 @@
 
 
-local params = BGA_G.Create( {
+local params = beat4sprite.create( {
 	Script = "SpaceEffects/RoundTrace.lua",	Type = "Spiral",
 	File = "5th/Sprites/CAB 5x4.png",
-	Frame_i = 2,	SprtSpin = true
+	firstState = 2,	SpinSprite = true
 } )
 
 return Def.ActorFrame{
-	loadfile( BGA_G.BPath("5th069A") )(),
+	loadfile( beat4sprite.Paths.getBGAFile("5th069A") )(),
 	params:Load()
 }

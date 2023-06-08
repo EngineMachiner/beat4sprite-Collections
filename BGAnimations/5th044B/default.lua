@@ -1,21 +1,21 @@
 
 local tweaks = ...
 
-local params = BGA_G.Create( {
+local params = beat4sprite.create( {
 	{},		{ Remove = true }
 } )
 
-local params_2 = BGA_G.Create( {
+local params_2 = beat4sprite.create( {
 	Index = 3,
 	File = "5th/Sprites/CAB 5x4.png",
-	Frame_i = 11,	Frame_l = 15,
-	Dir = "Up", 	Script = "Particles.lua"
+	firstState = 11,	lastState = 15,
+	Move = "Up", 	Script = "SpaceEffects/Particles.lua"
 } )
 
-params:ParTweak( tweaks )
-params_2:ParTweak( tweaks )
+params:tweak( tweaks )
+params_2:tweak( tweaks )
 
 return Def.ActorFrame{
-	loadfile( BGA_G.BPath("5th044A") )( params ),
+	loadfile( beat4sprite.Paths.getBGAFile("5th044A") )( params ),
 	params_2:Load()
 }

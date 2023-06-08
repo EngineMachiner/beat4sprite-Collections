@@ -1,20 +1,19 @@
 
-local sub = ...
-local params = BGA_G.Create( {
+local external = ...
+
+local params = beat4sprite.create {
 
 	{
 		Cleanup = true,
 		File = "5th/Sprites/AB 4x4.png",
-		Frame_i = 5,
-		Frame_l = 6,
-		X_num = { -4, 3 },
-		Y_num = { -2, 1 }
+		firstState = 5,				lastState = 6,
+		Columns = { -4, 3 },		Rows = { -2, 1 }
 	},
 
 	{ Remove = true }
 
-} )
+}
 
-	params:ParTweak( sub )
+params:tweak( external )
 
-return loadfile( BGA_G.BPath("5th001A") )( params )
+return loadfile( beat4sprite.Paths.getBGAFile("5th001A") )( params )

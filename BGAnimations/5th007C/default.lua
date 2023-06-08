@@ -1,12 +1,10 @@
 
-local params = BGA_G.Create( { 
+local params = beat4sprite.create { 
 	File = "/5th/Sprites/DABC 4x4.png",
-	Frame_i = 3,
-	Frame_l = 4,
+	firstState = 3,		 lastState = 4,
 	Script = "LineXY.lua"
-} )
+}
 
 return Def.ActorFrame{
-	loadfile( BGA_G.BPath("5th007B") )(),
-	params:Load()
+	loadfile( beat4sprite.Paths.getBGAFile("5th007B") )(),	params:Load()
 }

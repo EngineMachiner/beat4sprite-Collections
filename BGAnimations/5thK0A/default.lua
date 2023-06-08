@@ -1,7 +1,7 @@
 
-local params = BGA_G.Create( {
-	File = BGA_G.SongBGPath(),
-    Script = "Kaleidoscopes/Main.lua"
+local params = beat4sprite.create( {
+	File = beat4sprite.GAMESTATE.getSongBG(),
+    Script = "Kaleidoscopes/Single.lua"
 } )
 
 return params:Load()

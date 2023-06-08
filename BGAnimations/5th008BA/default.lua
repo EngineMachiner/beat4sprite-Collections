@@ -1,13 +1,13 @@
 
 local tweaks = { Index = 3, Remove = true }
 
-local params = BGA_G.Create( {
+local params = beat4sprite.create( {
 
-	{ Actors = loadfile( BGA_G.BPath("5th008AA") )( tweaks ) },
+	{ Actors = loadfile( beat4sprite.Paths.getBGAFile("5th008AA") )( tweaks ) },
 
 	{	
 		File = "5th/Sprites/A 4x3.png",
-		Frame_i = 5,	Frame_l = 6,
+		firstState = 5,	lastState = 6,
 		Script = "LineXY.lua"
 	}
 	

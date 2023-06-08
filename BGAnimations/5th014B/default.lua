@@ -1,19 +1,22 @@
 
-local params = BGA_G.Create( {
-	Frame_i = 7,	Frame_l = 8,
-	Commands = "Move",	SleepMove = true,
-	X_coord = -1,	Y_coord = -1,
-	X_num = { -4, 5 },	Y_num = { -1, 2 }
-} )
+local external = ...
 
-local params_2 = BGA_G.Create( {
-	File ="5th/Sprites/DA 4x3.png",
-	Frame_i = 1,
-	Frame_l = 2,
+local params = beat4sprite.create {
+	firstState = 7,	lastState = 8,
+	SkippyScroll = true, scrollX = -1, scrollY = -1,
+	Columns = { -4, 5 },	Rows = { -1, 2 },
+	Commands = ""
+}
+
+local params_2 = beat4sprite.create {
+	Index = 2,
+	File = "5th/Sprites/DA 4x3.png",
+	firstState = 1,		lastState = 2,
 	Script = "SpaceEffects/RoundTrace.lua"
-} )
+}
+
+params:tweak(external)			params_2:tweak(external)
 
 return Def.ActorFrame{
-	loadfile( BGA_G.BPath("5th014AB") )( params ),
-	params_2:Load()
+	loadfile( beat4sprite.Paths.getBGAFile("5th014AB") )( params ),		params_2:Load()
 }

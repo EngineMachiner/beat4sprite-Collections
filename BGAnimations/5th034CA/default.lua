@@ -1,11 +1,11 @@
-return BGA_G.Frame() .. {
+return beat4sprite.ActorFrame() .. {
 	
 	Def.ActorFrame{
-		loadfile( BGA_G.BPath("5th034C") )(),
+		loadfile( beat4sprite.Paths.getBGAFile("5th034C") )(),
 		OnCommand=function(self)
 			self:rainbow()
 			self:effectperiod(8)
-			BGA_G.ObjFuncs(self)
+			beat4sprite.setFunctions(self)
 		end
 	}
 

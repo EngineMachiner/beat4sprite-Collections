@@ -3,11 +3,9 @@ local tweaks = {
 	Index = 2,
 	Cleanup = true,
 	File = "/5th/Sprites/BAB 4x4.png",
-	Delay = 0.5,
-	X_num = { -4, 5 },	Y_num = 2,
-	Frame_i = 1,	Frame_l = 2,
-	X_coord = -1,	Y_coord = -1,
-	Commands = "Move"
+	Columns = { -4, 5 },	Rows = 2,
+	firstState = 1,	lastState = 2,
+	scrollX = -1,	scrollY = -1
 }
 
-return loadfile( BGA_G.BPath("5th060A") )( tweaks )
+return loadfile( beat4sprite.Paths.getBGAFile("5th060A") )( tweaks )

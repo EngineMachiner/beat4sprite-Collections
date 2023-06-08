@@ -1,4 +1,4 @@
 
-local params = BGA_G.Create( { File = "5th/Backgrounds/C.png" } )
+local params = beat4sprite.create( { File = "5th/Backgrounds/C.png" } )
 
-return loadfile( BGA_G.BPath("5th017AA") )( params )
+return loadfile( beat4sprite.Paths.getBGAFile("5th017AA") )( params )

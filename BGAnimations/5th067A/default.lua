@@ -1,29 +1,29 @@
 
 local sub = ...
 
-local params = BGA_G.Create( {
+local params = beat4sprite.create( {
 
 	{ 
 		 
 		File = "/5th/Backgrounds/CA.png",
 		Cleanup = true,
-		Frame_i = 1,
+		firstState = 1,
 		Commands = "Mirror",
-		BGMirror = true,
-		X_num = 1
+		MirrorX = true,
+		Columns = 1
 	},
 
 	{ 
 		File = "/5th/Sprites/CA 4x3.png",
-		Frame_i = 8,
+		firstState = 8,
 		Cleanup = true,
-		X_num = { -4, 3 },
-		Y_num = 1,
+		Columns = { -4, 3 },
+		Rows = 1,
 		Commands = "SpinY"
 	}
 
 } )
 
-	params:ParTweak( sub )
+	params:tweak( sub )
 
-return loadfile( BGA_G.BPath("5th051A") )( params )
+return loadfile( beat4sprite.Paths.getBGAFile("5th051A") )( params )

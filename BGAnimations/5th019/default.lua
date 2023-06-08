@@ -3,10 +3,10 @@ local tweaks = {
 
 	{
 		File = "5th/Sprites/ABC 4x4.png",
-		Frame_i = 13,
-		Frame_l = 16,
-		X_num = { -4, 3 },
-		Y_num = { -2, 1 },
+		firstState = 13,
+		lastState = 16,
+		Columns = { -4, 3 },
+		Rows = { -2, 1 },
 		Cleanup = true
 	},
 
@@ -14,4 +14,4 @@ local tweaks = {
 
 }
 
-return loadfile( BGA_G.BPath("5th001A") )( tweaks )
+return loadfile( beat4sprite.Paths.getBGAFile("5th001A") )( tweaks )

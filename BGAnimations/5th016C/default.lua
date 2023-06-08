@@ -1,19 +1,15 @@
-return BGA_G.Frame() .. {
+return beat4sprite.ActorFrame() .. {
 
-	loadfile(BGA_G.BPath("5th016A"))(),
+	loadfile( beat4sprite.Paths.getBGAFile("5th016A") )(),
+	loadfile( beat4sprite.Paths.getBGAFile("5th012A") )() .. {
 
-	Def.ActorFrame{
-		loadfile(BGA_G.BPath("5th012A"))(),
-		OnCommand=function(self)
-			BGA_G.ObjFuncs(self)
-			self:queuecommand("Repeat")
-		end,
+		OnCommand=function(self) self:queuecommand("Repeat") end,
 		RepeatCommand=function(self)
-			local d = self:GetDelay()
-			self:diffusealpha(0):sleep(d)
-			self:diffusealpha(1):sleep(d)
+			local d = self:getDelay()
+			self:diffusealpha(0):sleep(d):diffusealpha(1):sleep(d)
 			self:queuecommand("Repeat")
 		end
+
 	}
 
 }

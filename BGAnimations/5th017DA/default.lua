@@ -4,15 +4,14 @@ local sub = ...
 local params = {
 	{
 		File = "5th/Sprites/CAB 5x4.png",
-		Frame_i = 16,
-		Frame_l = 20,
-		X_num = 5,
-		Y_num = { -2, 1 },
-		Commands = "",
-		Mirror = false
+		firstState = 16,
+		lastState = 20,
+		Columns = 5,
+		Rows = { -2, 1 },
+		Remove = "MirrorX"
 	}, {}
 }
 
-BGA_G.ParTweak( params, sub )
+beat4sprite.tweak( params, sub )
 
-return loadfile( BGA_G.BPath("5th017AA") )( params )
+return loadfile( beat4sprite.Paths.getBGAFile("5th017AA") )( params )

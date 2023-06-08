@@ -1,13 +1,10 @@
 
 local sub = ...
 
-local params = BGA_G.Create( {
-	File = BGA_G.SongBGPath(),
-	X_num = 1,
-	Script = "WarpingEffects/Flag.lua",
-	BGMirror = true
-} )
+local params = beat4sprite.create {
+	File = beat4sprite.GAMESTATE.getSongBG(),		Script = "WarpingEffects/Flag.lua"
+}
 
-params:ParTweak(sub)
+params:tweak(sub)
 
 return params:Load()

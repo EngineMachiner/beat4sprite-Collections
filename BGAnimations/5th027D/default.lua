@@ -1,11 +1,10 @@
 
-local params = BGA_G.Create( {
-	File = "5th/Sprites/ABC 4x4.png",
-	Frame_l = 4,
-	Script = "SpiralStaticTrace.lua"
-} )
+local params = beat4sprite.create {
+	File = "5th/Sprites/ABC 4x4.png",		lastState = 4,
+	Script = "SpiralStaticTrace.lua",		Columns = { -1, 2 }
+}
 
 return Def.ActorFrame{
-	loadfile( BGA_G.BPath("5th027A") )( { Index = 2, Remove = true } ),
+	loadfile( beat4sprite.Paths.getBGAFile("5th027A") ) { Index = 3, Remove = true },
 	params:Load()
 }

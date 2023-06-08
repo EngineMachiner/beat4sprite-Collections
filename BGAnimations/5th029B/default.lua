@@ -1,7 +1,7 @@
 
 local params = {
-	Script = "Particles.lua",
-	Dir = "Down"
+	Script = "SpaceEffects/Particles.lua",
+	Move = "Down"
 }
 
-return loadfile( BGA_G.BPath("5th029A") )( params )
+return loadfile( beat4sprite.Paths.getBGAFile("5th029A") )( params )

@@ -1,3 +1,3 @@
-return loadfile( BGA_G.BPath("5th057A") )( { 
-    Index = 2,  Dir = "Right" 
+return loadfile( beat4sprite.Paths.getBGAFile("5th057A") )( { 
+    Index = 2,  Move = "Right" 
 } )

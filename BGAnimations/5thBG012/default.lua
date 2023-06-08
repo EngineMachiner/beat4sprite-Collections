@@ -1,53 +1,20 @@
 
-local sub = ...
+local sub = {
 
-local t = Def.ActorFrame{}
-t[#t+1] = loadfile( BGA_G.BPath("5thBG000") )()
+	{ Actors = loadfile( beat4sprite.Paths.getBGAFile("5thBG000") )() },
 
-local params = BGA_G.Create( {
-	File = "/5th/Backgrounds/BABC 2x2.png",
-	X_num = { -2, 1 },	Y_num = { -1, 0 },
-	Frame_i = 2,	Commands = "Mirror"
-} )
+	{ 
+		File = "/5th/Backgrounds/BABC 2x2.png",
+		Columns = { -2, 1 },	Rows = { -1, 0 },
+		firstState = 2,	Commands = "Mirror"
+	}
 
-params:ParTweak( sub )
-
-t[#t+1] = Def.ActorFrame{
-	params:Load(),
-	OnCommand=function(self)
-		BGA_G.ObjFuncs(self)
-		self:queuecommand("Repeat")
-	end,
-	RepeatCommand=function(self)
-		local d = self:GetDelay() * 2
-		self:diffusealpha(0):sleep(d)
-		self:diffusealpha(1):sleep(d)
-		self:diffusealpha(0):sleep(2*d)
-		self:queuecommand("Repeat")
-	end
 }
 
-params = BGA_G.Create( {
-	File = "/5th/Backgrounds/BABC 2x2.png",
-	X_num = { -2, 1 },	Y_num = { -1, 0 },
-	Frame_i = 3,	Commands = "Mirror"
-} )
+sub[3] = {}		DeepCopy( sub[2], sub[3] )		
 
-params:ParTweak( sub )
+sub[3].firstState = 3		sub[3].CycleTime = 4
 
-t[#t+1] = Def.ActorFrame{
-	params:Load(),
-	OnCommand=function(self)
-		BGA_G.ObjFuncs(self)
-		self:queuecommand("Repeat")
-	end,
-	RepeatCommand=function(self)
-		local d = self:GetDelay() * 2
-		self:diffusealpha(0):sleep(2*d)
-		self:diffusealpha(1):sleep(d)
-		self:diffusealpha(0):sleep(d)
-		self:queuecommand("Repeat")
-	end
-}
+beat4sprite.tweak( sub, ... )
 
-return Def.ActorFrame{ t }
+return beat4sprite.Load { Script = "Cyclic/Actor.lua", Set = sub, CycleTime = 2 }

@@ -1,19 +1,19 @@
 
 local sub = ...
 
-local params = BGA_G.Create( {
+local params = beat4sprite.create {
 
     File = {
-        BGA_G.SongBGPath(),
+        beat4sprite.GAMESTATE.getSongBG(),
         "5th/Backgrounds/CABCD.png",
         "5th/Backgrounds/C.png",
         "5th/Backgrounds/CA.png"
     },
-    Script = "SplitScreen.lua",
-    Alphas = { 2, 3 },      LoadOnce = true
+    Script = "Cyclic/SplitScreen.lua",
+    Alphas = { 2, 3 }
 
-} )
+}
 
-params:ParTweak( sub )
+params:tweak(sub)
 
 return params:Load()

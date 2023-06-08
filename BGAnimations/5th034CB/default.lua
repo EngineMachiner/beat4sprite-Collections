@@ -1,12 +1,12 @@
 
-local params = BGA_G.Create( {
+local params = beat4sprite.create( {
 	{
-		X_num = { -2, 1 },
-		X_coord = 1
+		Columns = { -2, 1 },
+		scrollX = 1
 	}
 } )
 
-return BGA_G.Frame() .. {
-	loadfile( BGA_G.BPath("5th034A") )( params ),
-	BGA_G.IDest_Quad()
+return beat4sprite.ActorFrame() .. {
+	loadfile( beat4sprite.Paths.getBGAFile("5th034A") )( params ),
+	beat4sprite.Sprite.blendQuad("BlendMode_InvertDest")
 }

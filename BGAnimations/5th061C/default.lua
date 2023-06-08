@@ -1,4 +1,4 @@
 
 local tweaks = { Index = 2, Script = "LineXY.lua" }
 
-return loadfile( BGA_G.BPath("5th061A") )( tweaks )
+return loadfile( beat4sprite.Paths.getBGAFile("5th061A") )( tweaks )

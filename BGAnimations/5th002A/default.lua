@@ -1,24 +1,17 @@
 
-local sub = ...
+local external = ...
 
-local tweaks = {
-
-	ParTweak = BGA_G.ParTweak,
+local tweaks = beat4sprite.create {
 	
 	{ Remove = true },
 
 	{
-		File = {
-			"5th/Backgrounds/ABC2.png",
-			"5th/Backgrounds/ABC.png"
-		},
-		X_num = 1,
-		Y_coord = -1,
-		Cleanup = true
+		File = { "5th/Backgrounds/ABC2.png",		"5th/Backgrounds/ABC.png" },
+		scrollY = -1,			Cleanup = true
 	}
 
 }
 
-tweaks:ParTweak( sub )
+tweaks:tweak( external )
 
-return loadfile( BGA_G.BPath("5th001A") )( tweaks )
+return loadfile( beat4sprite.Paths.getBGAFile("5th001A") )( tweaks )

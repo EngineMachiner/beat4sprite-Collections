@@ -1,22 +1,23 @@
 
 local tweaks = ...
 
-local params = BGA_G.Create( {
+local params = beat4sprite.create( {
 
 	{	
 		File = "/5th/Sprites/HSV/DAB2 4x4.png",
-		X_num = { -4, 3 },	Y_num = { -2, 1 },
-		Frame_i = 8,	Frame_l = 9,
-		Static = true,	Commands = { "StairsStates" }
+		Columns = { -4, 3 },	Rows = { -2, 1 },
+		firstState = 8,	lastState = 9,
+		AnimationTypes = "Static",	Commands = "StairsStates"
 	},
 
 	{		
 		File = "/5th/Sprites/DABC 4x4.png",
-		Frame_i = 1,	Frame_l = 2,
+		firstState = 1,	lastState = 2,
+		Columns = { -1, 2 },
 		Script = "SpiralStaticTrace.lua"
 	}
 
 } )
-params:ParTweak( tweaks )
+params:tweak( tweaks )
 
 return params:Load()

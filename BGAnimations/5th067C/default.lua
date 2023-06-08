@@ -1,3 +1,3 @@
-return loadfile( BGA_G.BPath("5th067A") )( { 
+return loadfile( beat4sprite.Paths.getBGAFile("5th067A") )( { 
 	Index = 2,	Commands = "SpinXY" 
 } )

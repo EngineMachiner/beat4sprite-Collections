@@ -1,15 +1,13 @@
 
 local sub = ...
 
-local params = BGA_G.Create( {
+local params = beat4sprite.create {
 	File = "5th/Sprites/D 5x4.png",
-	Frames = { 1, 20, Type = "OnlyRow" },
-	Y_num = { -3, 4 },
-	X_num = 5,
-	Commands = { "Move", "StairsStates" },
-	Y_coord = -1
-} )
+	States = { 1, 20, Types = "XY-Skip" },
+	Rows = { -3, 4 },	Columns = 5,
+	scrollY = -1
+}
 
-params:ParTweak( sub )
+params:tweak( sub )
 
 return params:Load()

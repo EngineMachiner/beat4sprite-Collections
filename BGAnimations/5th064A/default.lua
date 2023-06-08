@@ -1,22 +1,22 @@
 
 local sub = ...
 
-local params = BGA_G.Create( {
+local params = beat4sprite.create( {
 
 	{
 		File = "5th/Sprites/CAB 5x4.png",
-		Frame_i = 6,	X_num = 5,
-		Y_num = { -2, 1 }
+		firstState = 6,	Columns = 5,
+		Rows = { -2, 1 }
 	},
 
 	{
 		File = "/5th/Sprites/CA 4x3.png",
-		Frame_i = 9,	Cleanup = true,
-		Dir = "Right",	Script = "Particles.lua"
+		firstState = 9,	Cleanup = true,
+		Move = "Right",	Script = "SpaceEffects/Particles.lua"
 	}
 
 } )
 
-params:ParTweak( sub )
+params:tweak( sub )
 
 return params:Load()

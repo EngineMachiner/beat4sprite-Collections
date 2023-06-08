@@ -1,1 +1,3 @@
-return loadfile( BGA_G.BPath("5thBG011") )( { Sleep = 0.5 } )
+return loadfile( beat4sprite.Paths.getBGAFile("5thBG011") ) { 
+    { CycleTime = 0.5 }, { CycleTime = 0.5 } 
+}

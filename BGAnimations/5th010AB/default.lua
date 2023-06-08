@@ -4,13 +4,13 @@ local sub = ...
 local params = {
 
 	{
-		X_num = { -5, 4 },
-		X_coord = 1,
+		Columns = { -5, 4 },
+		scrollX = 1,
 		Commands = "Move"
 	}
 
 }
 
-BGA_G.ParTweak( params, sub )
+beat4sprite.tweak( params, sub )
 
-return loadfile( BGA_G.BPath("5th010AA") )( params )
+return loadfile( beat4sprite.Paths.getBGAFile("5th010AA") )( params )

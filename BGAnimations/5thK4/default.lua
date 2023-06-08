@@ -1,7 +1,7 @@
 
-local params = BGA_G.Create( {
+local params = beat4sprite.create( {
 	File = "5th/Backgrounds/A.png",
-    Script = "Kaleidoscopes/Main.lua"
+    Script = "Kaleidoscopes/Single.lua"
 } )
 
 return params:Load()

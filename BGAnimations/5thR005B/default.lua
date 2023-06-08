@@ -1,10 +1,10 @@
 
-local tweaks = BGA_G.Create( {
+local tweaks = beat4sprite.create( {
 	File = "5th/Sprites/Gradients/D001 8x8.png",
-	X_num = { -2, 1 },	Y_num = 1,
-	Frame_l = 60,	Zoom = 4,
+	Columns = { -2, 1 },	Rows = 1,
+	lastState = 60,	Zoom = 4,
 	Commands = { "Move" },	Cleanup = true,
-	Y_coord = -1
+	scrollY = -1
 } )
 
-return loadfile( BGA_G.BPath("5th004A") )( tweaks )
+return loadfile( beat4sprite.Paths.getBGAFile("5th004A") )( tweaks )

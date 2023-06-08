@@ -1,8 +1,8 @@
 
-local params = BGA_G.Create( {
-	File = BGA_G.SongBGPath(),	X_num = 1,
+local params = beat4sprite.create( {
+	File = beat4sprite.GAMESTATE.getSongBG(),	Columns = 1,
 	Commands = "Rainbow",
-	BGMirror = true
+	MirrorX = true
 } )
 
 return params:Load()

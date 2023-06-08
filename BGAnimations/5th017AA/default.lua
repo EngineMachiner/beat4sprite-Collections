@@ -1,26 +1,24 @@
 
 local tweaks = ...
 
-local params = BGA_G.Create( {
+local params = beat4sprite.create {
 
 	{		
 		File = "5th/Backgrounds/CA.png",
-		X_num = 1,
-		Commands = "Mirror",
-		BGMirror = true
+		Columns = 1,		MirrorX = true
 	},
 
 	{
 		File = "5th/Sprites/CABC 1x4.png",
-		Y_num = 2,
-		Frame_l = 4,
-		Y_coord = -1,
-		HurryTweenBy = 2,
+		Rows = 2,
+		lastState = 4,
+		scrollY = -1,
+		tweenRate = 2,
 		Commands = "Move"
 	}
 
-} )
+}
 
-params:ParTweak( tweaks )
+params:tweak( tweaks )
 
 return params:Load()

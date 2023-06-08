@@ -1,7 +1,1 @@
-
-local tweaks = {
-	Index = 2,
-	X_coord = 1
-}
-
-return loadfile( BGA_G.BPath("5th001C") )( tweaks )
+return loadfile( beat4sprite.Paths.getBGAFile("5th001C") )( { Index = 2, scrollX = 1 } )

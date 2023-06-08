@@ -1,12 +1,12 @@
 
-local params = BGA_G.Create( {
+local params = beat4sprite.create( {
 	File = "5th/Sprites/B 4x3.png",
-	Frame_i = 7,
-	Frame_l = 12,
+	firstState = 7,
+	lastState = 12,
 	Commands = "RandomStates",
-	Delay = 1,
-	X_num = { -4, 3 },
-	Y_num = 1
+	AnimationRate = 1,
+	Columns = { -4, 3 },
+	Rows = 1
 } )
 
 return params:Load()

@@ -1,3 +1,3 @@
-return loadfile( BGA_G.BPath("5th065") )( { 
-	File = BGA_G.SongBGPath()
-} )
+return loadfile( beat4sprite.Paths.getBGAFile("5th065") ) { 
+	File = { beat4sprite.GAMESTATE.getSongBG(), "/5th/Backgrounds/CA.png" }
+}

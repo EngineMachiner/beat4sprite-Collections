@@ -1,41 +1,31 @@
 
-local params = BGA_G.Create( {
+local params = beat4sprite.create {
+
+	tweakScript = beat4sprite.Paths.getBGAFile("5th001A"),
 
 	{
 		File = "5th/Backgrounds/AB.png",
 		Cleanup = true,
-		X_num = 1,
+		Columns = 1,
 		Commands = "Mirror",
-		BGMirror = true
+		MirrorX = true
 	},
 
 	{ Remove = true }
 
-} )
+}
 
-local params_2 = BGA_G.Create( {
-	File = "5th/Sprites/X3 5x4.png",
-	Cleanup = true,
-	Y_num = { -2, 1 }, X_num = 2,
-	Frames = { 1, 20, Type = "RowSkip" },
-	Commands = { "Pulse", "StairsStates" }
-} )
+return beat4sprite.ActorFrame() .. {
 
-return Def.ActorFrame{
+	beat4sprite.Sprite.colorQuad( Color.Black ),
 
-	Def.Quad{
-		OnCommand=function(self)
-			self:visible(true)
-			self:zoomto(SCREEN_WIDTH,SCREEN_HEIGHT)
-			self:Center()
-			self:diffuse(Color.Black)
-		end,
-		LoseFocusCommand=function(self)
-			self:visible(false)
-		end
-	},
+	params:Load(),
 
-	loadfile( BGA_G.BPath("5th001A") )( params ),
-	params_2:Load()
+	beat4sprite.Load {
+		File = "5th/Sprites/X3 5x4.png",
+		Rows = { -2, 1 }, Columns = 2,
+		States = { 1, 20, Types = "RowSkip" },
+		Commands = { "Pulse" }
+	}
 
 }

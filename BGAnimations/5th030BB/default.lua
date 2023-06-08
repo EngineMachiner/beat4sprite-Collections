@@ -1,1 +1,1 @@
-return loadfile( BGA_G.BPath("5th030B") )( { Flat = true } )
+return loadfile( beat4sprite.Paths.getBGAFile("5th030B") )( { Flat = true } )

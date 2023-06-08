@@ -1,25 +1,28 @@
 
 local sub = ...
 
-local params = BGA_G.Create( {
+local params = beat4sprite.create {
 
 	{
 		File = "5th/Sprites/HSV/DAB2 4x4.png",
-		Frame_i = 1,	Frame_l = 4,
-		X_num = { -5, 4 },	X_coord = 1,
-		HurryTweenBy = 2,	Commands = "Move",
-		FileTweak = BGA_G.BPath("5th010AA")
-	}, {}
+		firstState = 1,	lastState = 4,
+		Columns = { -5, 4 },	scrollX = -1,
+		tweakScript = beat4sprite.Paths.getBGAFile("5th010AA")
+	}
 
-} )
+}
 
-params:ParTweak( sub )
+params:tweak( sub )
 
-params[2] = params[1]:Copy()
-params[2]:ParTweak( {
-	Fade = { 1, 0.5 },	EffectOffset = 1.5,
+params[2] = params[1]:copy()
+
+params[2]:tweak {
+	Fade = { 1, 0.5 },
 	Class = "Quad",		Color = "Rainbow",
 	Blend = "BlendMode_Modulate"
-} )
+}
+
+-- More color.
+params[3] = params[2]:copy()
 
 return params:Load()

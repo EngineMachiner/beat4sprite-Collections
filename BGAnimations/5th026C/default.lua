@@ -1,14 +1,14 @@
 
-local params = BGA_G.Create( {
+local params = beat4sprite.create( {
 
 	{
 		File = "5th/Sprites/A 4x3.png",
-		X_num = { -4, 3 },
-		Y_num = { -2, 2 },
-		Frame_i = 9,
-		Frame_l = 10,
-		Commands = { "Move", "StairsStates" },
-		Y_coord = -1,
+		Columns = { -4, 3 },
+		Rows = { -2, 2 },
+		firstState = 9,
+		lastState = 10,
+		AnimationTypes = { "Static", "Stairs" },
+		scrollY = -1,
 		Cleanup = true
 	},
 
@@ -16,13 +16,13 @@ local params = BGA_G.Create( {
 
 } )
 
-local params_2 = BGA_G.Create( {
+local params_2 = beat4sprite.create( {
 	File = "5th/Sprites/AB 4x4.png",
-	Frame_i = 3,	Frame_l = 4,	Dir = "Up",
-	Script = "Particles.lua"
+	firstState = 3,	lastState = 4,	Move = "Up",
+	Script = "SpaceEffects/Particles.lua"
 } )
 
 return Def.ActorFrame{
-	loadfile( BGA_G.BPath("5th001A") )( params ),
+	loadfile( beat4sprite.Paths.getBGAFile("5th001A") )( params ),
 	params_2:Load()
 }

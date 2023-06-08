@@ -1,12 +1,12 @@
 return Def.ActorFrame{
 
-	loadfile( BGA_G.BPath("5thBG010") )( { 
-		HurryTweenBy = 0.5 
+	loadfile( beat4sprite.Paths.getBGAFile("5thBG010") )( { 
+		tweenRate = 0.5 
 	} ),
 
-	BGA_G.Load( { 
+	beat4sprite.Load( { 
 		File = "/5th/Sprites/HSV/DAB2 4x4.png",
-		Frame_i = 12,	Frame_l = 13,
+		firstState = 12,	lastState = 13,
 		Script = "RandomPos.lua",
 		Commands = { "Rotation", "Rainbow" }
 	} )

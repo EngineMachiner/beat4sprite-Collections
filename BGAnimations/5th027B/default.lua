@@ -1,7 +1,7 @@
 
 local tweaks = {
-	Index = 2,
+	Index = 3,
 	Commands = { "SpinY", "RandomDelays" }
 }
 
-return loadfile( BGA_G.BPath("5th027A") )( tweaks )
+return loadfile( beat4sprite.Paths.getBGAFile("5th027A") )( tweaks )

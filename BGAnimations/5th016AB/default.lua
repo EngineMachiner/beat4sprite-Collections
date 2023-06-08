@@ -1,1 +1,1 @@
-return loadfile( BGA_G.BPath("5th016A") )( { Delay = 2 } )
+return loadfile( beat4sprite.Paths.getBGAFile("5th016A") )( { AnimationRate = 2 } )

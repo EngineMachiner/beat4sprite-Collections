@@ -1,9 +1,9 @@
 
-local params = BGA_G.Create( {
+local params = beat4sprite.create( {
 	File = "5th/Sprites/HSV/DAB 4x4.png",
-	Frame_i = 5,
-	Frame_l = 8
+	firstState = 5,
+	lastState = 8
 
 } )
 
-return loadfile( BGA_G.BPath("5th022AD") )( params )
+return loadfile( beat4sprite.Paths.getBGAFile("5th022AD") )( params )

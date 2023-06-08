@@ -1,1 +1,1 @@
-return loadfile( BGA_G.BPath("5th028B") )( { Speed = 0.5 } )
+return loadfile( beat4sprite.Paths.getBGAFile("5th028B") ) { tweenRate = 0.5 }

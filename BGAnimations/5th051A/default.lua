@@ -2,23 +2,23 @@
 
 local sub = ...
 
-local params = BGA_G.Create( {
+local params = beat4sprite.create( {
 	File = "5th/Sprites/BA 4x3.png",
-	Frame_i = 11,
-	X_num = { -4, 3 },
-	Y_num = 1
+	firstState = 11,
+	Columns = { -4, 3 },
+	Rows = 1
 } )
-params:ParTweak( sub )
+params:tweak( sub )
 
-local params_2 = params:Copy()
-params_2:ParTweak( {
+local params_2 = params:copy()
+params_2:tweak( {
 	Index = 1,
 	File = "5th/Sprites/BAB 4x4.png",
-	Y_num = { -2, 1 },	Speed = 2,
+	Rows = { -2, 1 },	tweenRate = 2,
 	Commands = "SpinXY"
 } )
 params_2.Index = 2
-params_2:ParTweak( sub )
+params_2:tweak( sub )
 
 
 return Def.ActorFrame{

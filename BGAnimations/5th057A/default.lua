@@ -1,15 +1,15 @@
 
 local sub = ...
 
-local params = BGA_G.Create( {
+local params = beat4sprite.create {
 
-	FileTweak = BGA_G.BPath("5th056A"),
+	tweakScript = beat4sprite.Paths.getBGAFile("5th056A"),
 
-	{ Frame_i = 3 },
-	{ Frame_i = 10,	Dir = "Down" }
+	{ firstState = 3 },
+	{ firstState = 10,	Move = "Down" }
 
-} )
+}
 
-params:ParTweak( sub )
+params:tweak( sub )
 
 return params:Load()

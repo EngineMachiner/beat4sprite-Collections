@@ -1,6 +1,6 @@
 
 local tweaks = {
-	Dir = "Out",	Flat = true
+	Move = "Out",	Flat = true
 }
 
-return loadfile( BGA_G.BPath("5th030C") )( tweaks )
+return loadfile( beat4sprite.Paths.getBGAFile("5th030C") )( tweaks )

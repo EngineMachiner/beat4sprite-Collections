@@ -1,22 +1,19 @@
 
 local tweaks_2 = ...
 
-local tweaks = BGA_G.Create( {
+local tweaks = beat4sprite.create {
 
 	{
 		File = "5th/Sprites/DABC 4x4.png",
-		X_num = { -4, 3 },
-		Y_num = 2,
-		Y_coord = 1,
-		Frame_i = 14,
-		Cleanup = true,
+		Columns = { -4, 3 },	Rows = 2,		scrollY = 1,
+		firstState = 14,		Cleanup = true,
 		Commands = "Move"
 	},
 
 	{ Remove = true }
 
-} )
+}
 
-if tweaks_2 then tweaks:ParTweak( tweaks_2 ) end
+tweaks:tweak( tweaks_2 )
 
-return loadfile( BGA_G.BPath("5th003A") )( tweaks )
+return loadfile( beat4sprite.Paths.getBGAFile("5th003A") )( tweaks )

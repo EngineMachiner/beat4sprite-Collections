@@ -1,16 +1,8 @@
 
 local sub = ...
 
-local tweaks = {
+local tweaks = { scrollY = 1 }
 
-	{
-		Y_coord = 1,	FrmDelay = 2,
-		Commands = { "StairsStates", "Move" },
-	},
+beat4sprite.tweak( tweaks, sub )
 
-	{ Remove = true }
-
-}
-
-BGA_G.ParTweak( tweaks, sub )
-return loadfile( BGA_G.BPath("5th006A") )( tweaks )
+return loadfile( beat4sprite.Paths.getBGAFile("5th006AA") )( tweaks )

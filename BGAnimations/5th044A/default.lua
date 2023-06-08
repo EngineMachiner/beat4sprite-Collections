@@ -1,24 +1,24 @@
 
 local tweaks = ...
 
-local params = BGA_G.Create( {
+local params = beat4sprite.create( {
 
 	{
 		File = "/5th/Backgrounds/CA.png",
-		X_num = 1,
+		Columns = 1,
 		Commands = "Mirror",
-		BGMirror = true
+		MirrorX = true
 	},
 
 	{
 		File = "/5th/Sprites/CAB 5x4.png",
-		Frame_i = 11,
-		Frame_l = 15,
+		firstState = 11,
+		lastState = 15,
 		Script = "WallBumps.lua"
 	}
 
 } )
  	
-params:ParTweak( tweaks )
+params:tweak( tweaks )
 
 return params:Load()

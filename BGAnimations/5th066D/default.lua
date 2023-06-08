@@ -1,4 +1,4 @@
-return loadfile( BGA_G.BPath("5th066C") )( {  
-	X_coord = -1,	Frame_i = 7, 
-	X_num = { -5, 6 }
+return loadfile( beat4sprite.Paths.getBGAFile("5th066C") )( {  
+	scrollX = -1,	firstState = 7, 
+	Columns = { -5, 6 }
 } )

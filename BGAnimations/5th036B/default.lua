@@ -3,19 +3,19 @@ local tweaks = {
 
 	{
 		Index = 1,
-		X_coord = 0,	Y_coord = 0,
-		X_pos = 0,	X_num = 5,
-		Y_num = { -2, 1 }
+		scrollX = 0,	scrollY = 0,
+		posX = 0,	Columns = 5,
+		Rows = { -2, 1 }
 	},
 
 	{
 		Index = 3,
-		X_coord = -1,	Y_coord = -1,
-		X_pos = -0.5,	X_num = { -4, 6 },
-		Y_num = 2,	Delay = 2,
+		scrollX = -1,	scrollY = -1,
+		posX = -0.5,	Columns = { -4, 6 },
+		Rows = 2,	AnimationRate = 2,
 		Commands = "Move"
 	}
 
 }
 
-return loadfile( BGA_G.BPath("5th036A") )( tweaks )
+return loadfile( beat4sprite.Paths.getBGAFile("5th036A") )( tweaks )

@@ -1,22 +1,22 @@
 
 local tweaks = ...
 
-local params = BGA_G.Create( {
+local params = beat4sprite.create( {
 
 	{
 		File = "/5th/Sprites/DA 4x3.png",
-		Frame_i = 11,	Frame_l = 12,
-		X_num = { -5, 4 },	Y_num = 1
+		firstState = 11,	lastState = 12,
+		Columns = { -5, 4 },	Rows = 1
 	},
 
 	{
 		File = "/5th/Sprites/DABC 4x4.png",
 		Script = "SpaceEffects/RoundTrace.lua",
-		Clockwise = true,	Frame_i = 9
+		Clockwise = true,	firstState = 9
 	}
 
 } )
 	
-params:ParTweak( tweaks )
+params:tweak( tweaks )
 	
 return params:Load()

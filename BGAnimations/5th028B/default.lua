@@ -1,36 +1,30 @@
 
 local sub = ...
 
-local params = BGA_G.Create( {
+local params = beat4sprite.create {
 
 	{
 		File = "5th/Sprites/HSV/DAB2 4x4.png",
-		Frame_i = 5,
-		X_num = { -4, 3 },
-		Y_num = 2,
-		Commands = { "Rainbow", "Move" },
-		Y_coord = -1,
-		Cleanup = true
+		firstState = 5,		Columns = { -4, 3 },		Rows = 2,
+		Rainbow = true,		scrollY = -1,				Cleanup = true
 	},
 
 	{ Remove = true }
 
-} )
+}
 
-local params_2 = BGA_G.Create( {
+local params_2 = beat4sprite.create {
 	Index = 3,
 	File = "5th/Sprites/DABC 4x4.png",
-	Frame_i = 11,
-	Frame_l = 12,
-	Commands = "TwoSprites",
-	Rotation = true,
+	firstState = 11,	lastState = 12,
+	AnimationTypes = { "Stairs", "Static" },
+	Columns = { -1, 2 },	Rows = { -1, 2 },
 	Script = "SpiralStaticTrace.lua"
-} )
+}
 
-params_2:ParTweak(sub)
-params:ParTweak(sub)
+params:tweak(sub)			params_2:tweak(sub)
 
 return Def.ActorFrame{
-	loadfile( BGA_G.BPath("5th001A") )( params ),
+	loadfile( beat4sprite.Paths.getBGAFile("5th001A") )( params ),		
 	params_2:Load()
 }

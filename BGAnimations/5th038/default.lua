@@ -1,12 +1,12 @@
 
-local params = BGA_G.Create( {
+local params = beat4sprite.create( {
 	File = "5th/Sprites/AB 4x4.png",
-	Frames = { 16, 16 },
-	X_num = 4,
-	Y_num = { -2, 1 }
+	States = { 16, 16 },
+	Columns = 4,
+	Rows = { -2, 1 }
 } )
 
-return BGA_G.Frame() .. {
+return beat4sprite.ActorFrame() .. {
 
 	OnCommand=function(af)
 		af:RunCommandsOnChildren(function(c)
@@ -16,12 +16,12 @@ return BGA_G.Frame() .. {
 		af:queuecommand("Repeat")
 	end,
 
-	loadfile(BGA_G.BPath("5th037B"))(),
+	loadfile(beat4sprite.Paths.getBGAFile("5th037B"))(),
 
 	Def.ActorFrame{
-		loadfile(BGA_G.BPath("5th012A"))(),
+		loadfile(beat4sprite.Paths.getBGAFile("5th012A"))(),
 		RepeatCommand=function(self)
-			local d = BGA_G.GetDelay(self)
+			local d = beat4sprite.GAMESTATE.getDelay(self)
 			self:diffusealpha(0):sleep(d)
 			self:diffusealpha(1):sleep(d)
 			self:diffusealpha(0):sleep( 2 * d )
@@ -30,9 +30,9 @@ return BGA_G.Frame() .. {
 	},
 
 	Def.ActorFrame{
-		loadfile(BGA_G.BPath("5th016A"))(),
+		loadfile(beat4sprite.Paths.getBGAFile("5th016A"))(),
 		RepeatCommand=function(self)
-			local d = BGA_G.GetDelay(self)
+			local d = beat4sprite.GAMESTATE.getDelay(self)
 			self:diffusealpha(0):sleep(2*d)
 			self:diffusealpha(1):sleep(d)
 			self:diffusealpha(0):sleep(d)
@@ -43,7 +43,7 @@ return BGA_G.Frame() .. {
 	Def.ActorFrame{
 		params:Load(),
 		RepeatCommand=function(self)
-			local d = BGA_G.GetDelay(self)
+			local d = beat4sprite.GAMESTATE.getDelay(self)
 			self:diffusealpha(0):sleep(3*d)
 			self:diffusealpha(1):sleep(d)
 			self:queuecommand("Repeat")

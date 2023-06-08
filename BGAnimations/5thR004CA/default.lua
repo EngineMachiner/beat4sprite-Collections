@@ -1,8 +1,8 @@
 
-local params = BGA_G.Create( {
+local params = beat4sprite.create( {
 	File = "5th/Sprites/Gradients/C002 4x4.png",
-	X_num = { -2, 1 },	Y_num = { -1, 0 },
-	Frame_l = 1,	Frame_i = 15,
+	Columns = { -2, 1 },	Rows = { -1, 0 },
+	lastState = 1,	firstState = 15,
 	Zoom = 2,	Commands = "Mirror"
 } )
 
