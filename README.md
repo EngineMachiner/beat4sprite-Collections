@@ -1,3 +1,5 @@
+[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/W7W32691S)
+
 # beat4sprite-Collections
 
 Inspired collections and examples of beat4sprite.
