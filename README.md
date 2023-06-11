@@ -12,7 +12,7 @@ It doesn't and will never profit out of it's contents.
 Please report it if you see it's misuse.
 This project is not associated with KONAMI.
 
-## INSTALLATION
+## Usage
 
   0. Make sure you already have [beat4sprite](https://github.com/EngineMachiner/beat4sprite).
   1. Copy the graphics of the branch you want and put the folder in "/Modules/beat4sprite/Graphics/".
