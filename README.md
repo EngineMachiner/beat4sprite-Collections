@@ -2,11 +2,11 @@
 
 # beat4sprite-Collections
 
-Inspired collections and examples of beat4sprite.
+Inspired collections and examples using beat4sprite.
 
 ### DISCLAIMER
 
-These collections is for private/home/non-commercial use.
+These examples are for private/home/non-commercial use.
 It isn't for public arcades cabinets.
 It doesn't and will never profit out of it's contents.
 Please report it if you see it's misuse.
