@@ -114,7 +114,7 @@ t[#t+1] = beat4sprite.ActorFrame("Hide") .. {
 
 	beat4sprite.Sprite.colorQuad( Color.Black ),
 
-	beat4sprite.Paths.randomBGA(),
+	beat4sprite.randomBGA(),
 	
 	HideCommand=function(self)
 		local d = self:getDelay()
